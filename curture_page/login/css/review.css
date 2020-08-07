@@ -1,0 +1,31 @@
+.review{
+  margin:0 auto;
+}
+.review_form{
+  display: flex;
+  justify-content: center;
+}
+body{
+  align:center;
+}
+.review_title > h1{
+  text-align:center;
+  font-size:3em;
+  font-weight:bold;
+  color:darkblue;
+}
+.review > table{
+
+}
+.odd_row{
+  background:#ffcc66;
+}
+.even_row{
+  background:#ffff99;
+}
+.des_position{
+  text-align:center;
+}
+.submit{
+  margin-left:0;
+}
