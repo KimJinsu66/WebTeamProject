@@ -1,61 +1,39 @@
+
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="js/check_PW_Same.js"></script>
+    <script src="js/check_power.js"></script>
     <meta charset="utf-8">
-    <title></title>
-    <style>
+    <title>회원가입</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일본페이지</title>
+    <!-- 페비콘 가져오기 -->
+    <link rel="icon" type="titleImg" href="../home/imgs/favicon.png">
+    <link rel="stylesheet" href="./css/mainTextAndreviewLayout.css">
 
-    .h1_box {
-      text-align: center;
-    }
 
-    .register_container{
-      margin: 0 auto;
-      max-width: 768px;
-      min-width: 540px;
-    }
+    <!-- 폰트 어썸 백터 아이콘 가져오기 -->
+    <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous">
+    </script>
 
-    .register_box {
-      width: 460px;
-      margin-left: 75px;
+    <!-- 구글 폰트 가져오기 -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    }
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="../header/style.css">
+    <link rel="stylesheet" href="css/register.css">
 
-    input {
-      width: 600px;
-      height: 50px;
-    }
-
-    select {
-      width: 608px;
-      height: 60px;
-      font-size: 18px;
-    }
-
-    .birthday_text {
-      width: 600px;
-      height: 55px;
-    }
-
-    h3 {
-      text-align: left;
-      font-size: 20px;
-    }
-
-    .register_button {
-      width:600px;
-      height:50px;
-      background:#e5236d;
-      border: none;
-      margin-top: 50px;
-      color: white;
-      font-size: 17px;
-    }
-    </style>
-    <script src="./lib/check_PW_Same.js"></script>
-    <script src="./lib/safetyPasswordPattern.js"></script>
+    <script src="../home/js/main.js" defer></script>
 </head>
 <body>
+
+  <?php include "../header/header.php"
+
+  ?>
+
+
 <form action="./check/register_ok.php" method="post" \>
   <div class="register_container">
 
@@ -70,17 +48,23 @@
       </div>
       <div class="pw_container">
         <h3>비밀번호</h3>
-        <input type="password" name="password" id="pw" onKeyup="isSame()"/>
+        <input type="password" name="password" id="pw" onKeyup="isSame(),safetyPasswordPattern(this)" />
+      </div>
+      <div class="pw_confirm_power">
+        <span id="makyText">:: 비밀번호를 입력해 주세요 ::</span>
       </div>
       <div class="pw_confirm_container">
         <h3>비밀번호 확인</h3>
-        <input type="password" name="password" id="pwCheck" onKeyup="isSame()" />
+        <input type="password" name="password" id="pwCheck" onKeyup="isSame()"/>
+      </div>
+      <div class="pw_confirm_check">
+        <span id="same"></span>
       </div>
   </div>
   <div class="user_information_box">
     <div class="radio_gender">
       <h3>성별</h3>
-      <select class="select_gender" name="">
+      <select class="select_gender" name="gender">
         <option value="" selected="">성별</option>
         <option value="M">남자</option>
         <option value="F">여자</option>

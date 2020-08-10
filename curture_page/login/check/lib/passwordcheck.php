@@ -11,7 +11,7 @@
       && $password_special_check ==1){
         echo "ok!"."<br>";
       } else {
-    echo "<script>alert('영문 대소문자,숫자,특수문자 섞어서 만들어주세요.'); location.href='../register.php';</script>";
+    echo "<script>alert('영문 대소문자,숫자,특수문자 섞어서 만들어주세요.'); history.back();</script>";
     exit;
   }
 }

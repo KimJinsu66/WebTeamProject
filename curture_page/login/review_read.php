@@ -59,7 +59,7 @@
                     작성자 <?=$fillarray['id']?>
                   </div>
                   <div class="review_image">
-                    <img src="http://localhost/curture_page/login/media/<?= $fillarray['file']?>" width="20%" height="20%">
+                    <img src="http://localhost/WebTeamProject-master/curture_page/login/media/<?= $fillarray['file']?>" width="20%" height="20%">
                   </div>
                 </div>
 
@@ -130,7 +130,7 @@
                     <td>작성자<?= $fillarray2['id']?></td>
                   </tr>
                   <tr>
-                    <td rowspan='3'><img src="http://localhost/curture_page/login/media/<?= $fillarray2['file']?>" width="200" height="200"></td>
+                    <td rowspan='3'><img src="http://localhost/WebTeamProject-master/curture_page/login/media/<?= $fillarray2['file']?>" width="200" height="200"></td>
                     <td width="100">제목</td>
                     <td width="300"><?= $fillarray2['title']?></td>
                   </tr>

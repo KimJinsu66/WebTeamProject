@@ -10,7 +10,7 @@
   } else {
     $sql = mq("insert into comment(comment, reviewNum,id)
             values('".$comment."', '".$review_no."','".$id."')");
-  header('Location: ../review_read.php');
+  header('Location: http://localhost/WebTeamProject-master/curture_page/country/curture_main.php');
 }
 
  ?>

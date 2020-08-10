@@ -27,9 +27,9 @@
     $_SESSION['password'] = $member["password"];
 
     if($rank == "member") {
-      echo "<script>alert('로그인 되었습니다.'); location.href='../../home/index.html';</script>";
+      echo "<script>alert('로그인 되었습니다.'); location.href='../../home/index.php';</script>";
     } else {
-      echo "<script>alert('로그인 되었습니다.'); location.href='../../home/index.html';</script>";
+      echo "<script>alert('로그인 되었습니다.'); location.href='../../home/index.php';</script>";
     }
   } else {
     echo "<script>alert('아이디 또는 비밀번호를 정확히 입력해주세요.'); location.href='../login.php';</script>";

@@ -2,7 +2,8 @@
   include "../data/db.php";
   $title = $_POST['title'];
   $description = $_POST['description'];
-  $genre = $_POST['genre'];
+  $genre = $_POST['select_genre'];
+  $kategorie = $_POST['select_kategorie'];
   $tmpfile = $_FILES['file']['tmp_name']; //$_FILES는 'file'에 대한 것에 대해서 많은 array값의 형태로 가져오는데 그중에서 tep_name의 값을 가져와라
   $o_name = $_FILES['file']['name'];      //$_FILES는 'file'에 대한 것에 대해서 많은 array값의 형태로 가져오는데 그중에서 name의 값을 가져와라
   $filename = iconv("UTF-8", "EUC-KR", $_FILES['file']['name']); // 파일이 깨지지 않도록 인코딩해주는 것
@@ -13,15 +14,19 @@
   $member_no = $sql -> fetch_array();
 
   if(isset($_SESSION['id'])){
-    if($title == null || $description ==null || $o_name == null || $genre == null){
+    if($title == null || $description ==null || $genre == null || $kategorie ==null){
       echo "<script>alert('내용을 모두 기입해주세요.'); location.href='../review.php';</script>";
-    } else {
-    $sql = mq("insert into review(id, title, description, file, memberNum, genre)
-                values('".$_SESSION['id']."', '".$title."', '".$description."', '".$o_name."', '".$member_no['mem_no']."', '".$genre."')");
-
-    echo "<script>alert('글쓰기 성공했습니다.'); location.href='../review_read.php';</script>";
     }
-  } else {
-    echo "<script>alert('review를 이용하기 위해서는 로그인을 해주세요.'); location.href='./login.php';</script>";
+
+    // 사진을 넣었을 경우와 안넣었을 경우 따로 따로 되도록 해놨음
+    if(isset($o_name)){
+    $sql = mq("insert into review(id, title, description, file, memberNum, genre, kategorie)
+                values('".$_SESSION['id']."', '".$title."', '".$description."', '".$o_name."', '".$member_no['mem_no']."', '".$genre."', '".$kategorie."')");
+    echo "<script>alert('글쓰기 성공했습니다.'); location.href='http://localhost/curture_page/country/curture_main.php';</script>";
+    } else {
+      $sql = mq("insert into review(id, title, description, memberNum, genre, kategorie)
+                  values('".$_SESSION['id']."', '".$title."', '".$description."', '".$member_no['mem_no']."', '".$genre."', '".$kategorie."')");
+      echo "<script>alert('글쓰기 성공했습니다.'); location.href='http://localhost/curture_page/country/curture_main.php';</script>";
   }
+}
  ?>
