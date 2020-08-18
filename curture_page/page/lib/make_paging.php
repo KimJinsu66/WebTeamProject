@@ -2,8 +2,11 @@
   // include "../../common/db.php";
 
   function make_paging($i, $pageNum, $search_title, $genre, $kategorie){
-    if ($pageNum == "") { return mq("select * from review order by review_no limit 0,5");}
-
+    if ($pageNum == "" && $genre == "" && $kategorie =="") { return mq("select * from review order by review_no limit 0,5");}
+    if ($pageNum == "" && $kategorie =="") { return mq("select * from review where genre = '".$genre."' order by review_no limit 0,5");}
+    if ($pageNum == "" && $genre == "") { return mq("select * from review where kategorie = '".$kategorie."' order by review_no limit 0,5");}
+    if ($pageNum == "") { return mq("select * from review where genre ='".$genre."' and kategorie = '".$kategorie."' order by review_no limit 0,5");}
+    
     $criteria = ($pageNum-1)*5;
     switch($i){
       case 1:

@@ -96,7 +96,7 @@
       <?php if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
         $sql = make_paging(1, $_GET['page'], $_POST['search_title'], "", "");
       } else { if(isset($_GET['page'])) {
-            $sql = make_paging(2, $_GET['page'], "", "", "");
+            $sql = make_paging(1, $_GET['page'], "", "", "");
           } else {
             $sql = make_paging(2, "", "", "", "");
           }
@@ -127,7 +127,7 @@
       if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
         $sql = make_paging(3, $_GET['page'], $_POST['search_title'], $_GET['genre'], "");
       } else{
-        $sql = make_paging(4, $_GET['page'], "", $_GET['genre'], "");
+        $sql = make_paging(4, "", "", $_GET['genre'], "");
       }
       $low = $sql -> num_rows;
       for($i=1; $i<=$low; $i++){
@@ -155,7 +155,7 @@
         if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
           $sql = make_paging(5, $_GET['page'], $_POST['search_title'], "", $_GET['kategorie']);
         } else{
-          $sql = make_paging(6, $_GET['page'], "", "", $_GET['kategorie']);
+          $sql = make_paging(6, "", "", "", $_GET['kategorie']);
         }
         $low = $sql -> num_rows;
         for($i=1; $i<=$low; $i++){
@@ -181,9 +181,9 @@
         </div>
         <?php
         if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
-          $sql = make_paging(5, $_GET['page'], $_POST['search_title'], $_GET['genre'], $_GET['kategorie']);
+          $sql = make_paging(7, $_GET['page'], $_POST['search_title'], $_GET['genre'], $_GET['kategorie']);
         } else{
-          $sql = make_paging(6, $_GET['page'], "", $_GET['genre'], $_GET['kategorie']);
+          $sql = make_paging(8, "", "", $_GET['genre'], $_GET['kategorie']);
         }
         $low = $sql -> num_rows;
         for($i=1; $i<=$low; $i++){
