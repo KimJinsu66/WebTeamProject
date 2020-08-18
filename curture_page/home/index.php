@@ -1,8 +1,10 @@
 
+<?php include "../header/header.php"
+
+?>
+
 <!DOCTYPE html>
-
 <html >
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,10 +32,6 @@
 </head>
 
 <body>
-  <?php include "../header/header.php"
-
-  ?>
-
     <!-- 메인 -->
 
     <!-- 이미지 슬라이더 -->
@@ -44,8 +42,5 @@
         <a class="prev" onclick="button_click(-1)">&#10094</a>
         <a class="next" onclick="button_click(1)">&#10095</a>
     </div>
-
-
 </body>
-
 </html>

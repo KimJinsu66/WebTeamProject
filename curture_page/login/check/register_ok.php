@@ -1,5 +1,5 @@
 <?php
-  include "../data/db_info.php";
+  include "../../common/db_info.php";
   include "../data/password.php";
   require_once('./lib/passwordcheck.php');
 

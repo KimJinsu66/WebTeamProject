@@ -1,0 +1,42 @@
+body {
+  height: 3000px;
+}
+
+.main {
+  text-align: center;
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.main_title {
+  font-size: 5em;
+  font-weight: bold;
+  color: darksalmon;
+}
+.main_subtitle {
+  font-size: 1.25em;
+  margin: 1em;
+}
+.review {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 1200px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.review > div {
+  float: left;
+}
+/*.total {
+  float: right;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 800px;
+  border: 1px solid black;
+  border-radius: 10px;
+}*/

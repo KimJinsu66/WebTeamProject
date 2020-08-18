@@ -55,7 +55,7 @@
       </div>
       <div class="pw_confirm_container">
         <h3>비밀번호 확인</h3>
-        <input type="password" name="password" id="pwCheck" onKeyup="isSame()"/>
+        <input type="password" name="password_check" id="pwCheck" onKeyup="isSame()"/>
       </div>
       <div class="pw_confirm_check">
         <span id="same"></span>
