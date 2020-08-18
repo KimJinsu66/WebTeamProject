@@ -3,6 +3,9 @@ function get_content($fillarray){
 
 $string =
     "<div class=\"review_kategorie\" style=\"width:50px\">
+    ".$fillarray['review_no']."
+    </div>
+    <div class=\"review_kategorie\" style=\"width:50px\">
       ".$fillarray['kategorie']."
     </div>
     <div class=\"review_genre\" style=\"width:100px\">
@@ -11,8 +14,8 @@ $string =
     <div class=\"genre_title\" style=\"width:200px\">
      ".$fillarray['genre_title']."
     </div>
-    <div class=\"review_title\" style=\"width:500px\">
-       ".$fillarray['title']."
+    <div class=\"review_title\" style=\"width:450px\">
+       <a href=\"japan_review_read.php?review_no=".$fillarray['review_no']."\">".$fillarray['title']."</a>
     </div>
     <div class=\"review_user\" style=\"width:100px\">
       ".$fillarray['id']."
