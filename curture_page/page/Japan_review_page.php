@@ -5,6 +5,7 @@
   include "review/lib/get_content.php";
   include "lib/get_genre.php";
   include "lib/make_paging.php";
+  include "lib/make_paging_number.php";
 ?>
 <head>
   <meta charset="utf-8">
@@ -53,13 +54,13 @@
     <button class="dropbtn">카테고리선택</button>
     <div class="dropdown-content">
       <?php if(isset($_GET['genre'])){ ?>
-      <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=음식">음식</a>
-      <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=장소">장소</a>
-      <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=놀거리">놀거리</a>
+      <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=음식&page=1">음식</a>
+      <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=장소&page=1">장소</a>
+      <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=놀거리&page=1">놀거리</a>
     <?php } else {?>
-      <a href="Japan_review_page.php?kategorie=음식">음식</a>
-      <a href="Japan_review_page.php?kategorie=장소">장소</a>
-      <a href="Japan_review_page.php?kategorie=놀거리">놀거리</a>
+      <a href="Japan_review_page.php?kategorie=음식&page=1">음식</a>
+      <a href="Japan_review_page.php?kategorie=장소&page=1">장소</a>
+      <a href="Japan_review_page.php?kategorie=놀거리&page=1">놀거리</a>
     <?php } ?>
     </div>
   </div>
@@ -77,30 +78,34 @@
       <input type="text" class="search_title_text" name="search_title" width="30px;" height="30px;" placeholder="찾으시는 키워드를 입력해주세요">
       <input type="submit" name="submit" value="검색">
       <button type="button" name="button" onclick="location.href='review/review.php'">글쓰기</button>
-      <button type="button" name="button" onclick="location.href='Japan_review_page.php'">홈으로</button></form>
+      <button type="button" name="button" onclick="location.href='Japan_review_page.php?page=1'">홈으로</button></form>
     </div>
   </div>
     <div class="total">
     <?php
       // genre 와 kategorie 값이 없을경우 , 즉 처음에 화면 들어왔을때 모든 게시판이 보이도록 (limit 사용해서 최대 5개 ) 해주는 코딩
     if(!isset($_GET['genre']) && !isset($_GET['kategorie'])){
-      $sql_total = mq("select * from review");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;?>
-      <div id="paging">
-      <?php for($i=0; $i<=$page_total; $i++){ ?> 
+      if(isset($_POST['search_title'])){ 
+        $page_total = make_paging_number(1,$_POST['search_title'],"","");
+        ?>
+        <div id="paging">
+        <?php for($i=0; $i<=$page_total; $i++){ ?> 
           <a href="Japan_review_page.php?page=<?=($i+1)?>"><?=($i+1)?></a>
-      <?php }?>
-      </div>
-
-      <?php if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
-        $sql = make_paging(1, $_GET['page'], $_POST['search_title'], "", "");
-      } else { if(isset($_GET['page'])) {
-            $sql = make_paging(1, $_GET['page'], "", "", "");
-          } else {
-            $sql = make_paging(2, "", "", "", "");
-          }
-      }
+        <?php }?></div>
+        <?php
+          $sql = make_paging(1, $_GET['page'], $_POST['search_title'], "", "");   
+      } 
+      
+      else {
+        $page_total = make_paging_number(2,"","","");
+        ?>
+        <div id="paging">
+        <?php for($i=0; $i<=$page_total; $i++){ ?> 
+          <a href="Japan_review_page.php?page=<?=($i+1)?>"><?=($i+1)?></a>
+        <?php }?></div>
+        <?php
+        $sql = make_paging(2, $_GET['page'], "", "", "");
+      } 
 
       $low = $sql -> num_rows;
       for($i=1; $i<=$low; $i++){
@@ -115,20 +120,27 @@
       </div>
       <?php }   // genre 만 선택하고 kategorie 는 선택하지 않았을경우의 게시글을 보여주는 코딩
     } else if (isset($_GET['genre']) && !isset($_GET['kategorie'])){
-      $sql_total = mq("select * from review where genre= '".$_GET['genre']."'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;?>
-      <div id="paging">
-      <?php for($i=0; $i<=$page_total; $i++){ ?> 
-          <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
-      <?php }?>
-      </div>
-      <?php
       if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
+        $page_total = make_paging_number(3,$_POST['search_title'], $_GET['genre'],"");
+        ?>
+        <div id="paging">
+        <?php for($i=0; $i<=$page_total; $i++){ ?> 
+          <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
+        <?php }?></div>
+        <?php
         $sql = make_paging(3, $_GET['page'], $_POST['search_title'], $_GET['genre'], "");
-      } else{
-        $sql = make_paging(4, "", "", $_GET['genre'], "");
-      }
+      } 
+      
+      else {
+        $page_total = make_paging_number(4,"", $_GET['genre'],"");
+        ?>
+        <div id="paging">
+        <?php for($i=0; $i<=$page_total; $i++){ ?> 
+          <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
+        <?php }?></div>
+        <?php
+        $sql = make_paging(4, $_GET['page'], "", $_GET['genre'], "");
+      } 
       $low = $sql -> num_rows;
       for($i=1; $i<=$low; $i++){
         $result =$sql -> fetch_array();
@@ -143,19 +155,26 @@
                   
         <?php }  // kategorie만 선택하고 genre는 선택하지 않았을경우의 게시글
       } else if (!isset($_GET['genre']) && isset($_GET['kategorie'])){
-        $sql_total = mq("select * from review where kategorie= '".$_GET['kategorie']."'");
-        $row_total = $sql_total -> num_rows;
-        $page_total = $row_total/5;?>
-        <div id="paging">
-        <?php for($i=0; $i<=$page_total; $i++){ ?> 
-            <a href="Japan_review_page.php?kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
-        <?php }?>
-        </div>
-        <?php
         if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
+          $page_total = make_paging_number(5,$_POST['search_title'], "", $_GET['kategorie']);
+          ?>
+          <div id="paging">
+          <?php for($i=0; $i<=$page_total; $i++){ ?> 
+            <a href="Japan_review_page.php?kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
+          <?php }?></div>
+          <?php
           $sql = make_paging(5, $_GET['page'], $_POST['search_title'], "", $_GET['kategorie']);
-        } else{
-          $sql = make_paging(6, "", "", "", $_GET['kategorie']);
+        } 
+        
+        else{
+          $page_total = make_paging_number(6,"", "", $_GET['kategorie']);
+          ?>
+          <div id="paging">
+          <?php for($i=0; $i<=$page_total; $i++){ ?> 
+            <a href="Japan_review_page.php?kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
+          <?php }?></div>
+          <?php
+          $sql = make_paging(6,  $_GET['page'], "", "", $_GET['kategorie']);
         }
         $low = $sql -> num_rows;
         for($i=1; $i<=$low; $i++){
@@ -171,19 +190,26 @@
 
           <?php }  // genre와 kategorie 모두를 선택해서 두가지 조건에 맞는 게시글을 보여주는 경우
       } else if (isset($_GET['genre']) && isset($_GET['kategorie'])){
-        $sql_total = mq("select * from review where genre= '".$_GET['genre']."' and kategorie = '".$_GET['kategorie']."'");
-        $row_total = $sql_total -> num_rows;
-        $page_total = $row_total/5;?>
-        <div id="paging">
-        <?php for($i=0; $i<=$page_total; $i++){ ?> 
-            <a href="Japan_review_page.php?kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
-        <?php }?>
-        </div>
-        <?php
         if(isset($_POST['search_title'])){  // + 추가적으로 키워드를 검색 했을경우에는 쿼리문에 like "키워드"를 통해서 원하는 title을 볼 수 있다.
+          $page_total = make_paging_number(7,$_POST['search_title'], $_GET['genre'], $_GET['kategorie']);
+          ?>
+          <div id="paging">
+          <?php for($i=0; $i<=$page_total; $i++){ ?> 
+            <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
+          <?php }?></div>
+          <?php
           $sql = make_paging(7, $_GET['page'], $_POST['search_title'], $_GET['genre'], $_GET['kategorie']);
-        } else{
-          $sql = make_paging(8, "", "", $_GET['genre'], $_GET['kategorie']);
+        } 
+        
+        else{
+          $page_total = make_paging_number(8, "", $_GET['genre'], $_GET['kategorie']);
+          ?>
+          <div id="paging">
+          <?php for($i=0; $i<=$page_total; $i++){ ?> 
+            <a href="Japan_review_page.php?genre=<?=$_GET['genre']?>&kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
+          <?php }?></div>
+          <?php
+          $sql = make_paging(8, $_GET['page'], "", $_GET['genre'], $_GET['kategorie']);
         }
         $low = $sql -> num_rows;
         for($i=1; $i<=$low; $i++){

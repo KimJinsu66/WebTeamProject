@@ -4,7 +4,7 @@
 ?>
 <header>
   <div class="top clear">
-      <h1><a href="../home/index.php" height="5" width"10"><img src="http://localhost/WebTeamProject/curture_page/page/imgs/banner.png" alt="엔터트립"></a></h1>
+      <h1><a href="../home/index.php" height="5" width"10"><img src="http://localhost/WebTeamProject/curture_page/home/imgs/banner.png" alt="엔터트립"></a></h1>
   </div>
 
   <div class="search-box">
