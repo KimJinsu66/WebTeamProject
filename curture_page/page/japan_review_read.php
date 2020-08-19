@@ -50,6 +50,14 @@
   .review_delete{
     text-align:right;
   }
+  .comment_container{
+    text-align:left;
+  }
+  .main{
+    border:1px solid black;
+    width:1200px;
+    margin:0 auto;
+  }
   </style>
 </head>
 <body>
@@ -67,12 +75,22 @@
   <?php
   $sql = mq("select * from review where review_no = ".$_GET['review_no']."");
   $result = $sql -> fetch_array();
-  $fillarray = get_array($result);?>
+  $fillarray = get_array($result);
 
-  <div class="main" style="border:1px solid black; width:1200px; margin:0 auto;" >
+  // 게시글 들어올때마다 조회수가 오르도록 해놨음 .
+  $count = $fillarray['view_count'];
+  $count ++;
+  $sql = mq("update review set view_count =".$count." where review_no = ".$_GET['review_no']."");
+
+  ?>
+  
+  <!-- 게시글을 불러오는 함수  -->
+  <div class="main">
     <div class="kategorie">
       <?php echo get_review_content($fillarray); ?>
     </div>
+
+    <!-- 글쓴 사람에게만 글삭제 권한을 줄 수 있게 해주는 코드  -->
     <div class="review_delete">
     <?php
       if(isset($_SESSION['id'])){
@@ -84,6 +102,8 @@
           <?php }
           }?>
     </div>
+
+    <!-- 현재 게시글에 달려있는 댓글을 보여주는 창과 댓글 입력하는 창 -->
     <div class="comment">
       <?php
        // 리뷰db와 댓글db를 join해서 만약 댓글이 존재한다면 댓글이 보이게 해주는 코딩
@@ -91,18 +111,18 @@
       $low = $sql2 ->num_rows;
       if(!$low == 0){
         for($j=1; $j<=$low; $j++){
-          $result =$sql2 -> fetch_array();
+          $result2 =$sql2 -> fetch_array();
 
           ?>
           <div class="comment_container">
             <div class="">
-              작성자 <?=$result['id']?>
+              <?=$result2['comment_id']?>
             </div>
             <div class="">
-              내용 <?=$result['comment']?>
+              <?=$result2['comment']?>
             </div>
             <div class="">
-            <?=$result['comment_date']?>
+              <?=$result2['comment_date']?>
             </div>
           </div>
       <?php
@@ -113,6 +133,5 @@
       ?>
     </div>
   </div>
-
 </body>
 </html>

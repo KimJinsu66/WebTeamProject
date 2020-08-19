@@ -15,7 +15,7 @@
   }
 
     $genre = $_POST['genre'];
-    $sql = mq("insert into comment(comment, reviewNum, id, comment_date)
+    $sql = mq("insert into comment(comment, reviewNum, comment_id, comment_date)
             values('".$comment."', '".$review_no."','".$id."', now())");
     header("Location: ../../japan_review_read.php?review_no=$review_no");
 
