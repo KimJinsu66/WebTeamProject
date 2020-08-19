@@ -1,5 +1,6 @@
 <?php
   include "../../../common/db.php";
+  
   $country = $_POST['select_country'];
   $title = $_POST['title'];
   $genre_title =$_POST['genre_title'];

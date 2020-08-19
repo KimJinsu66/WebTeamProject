@@ -5,14 +5,15 @@
      'review_no' => $result['review_no'],
      'id' => $result['id'],
      'title' => $result['title'],
-     
-    
+     'description' => $result['description'],
      'mem_no' => $result['memberNum'],
      'genre' => $result['genre'],
+     'file' => $result['file'],
      'kategorie' => $result['kategorie'],
      'review_date' => $result['review_date'],
      'genre_title' => $result['genre_title'],
-     'view_count' => $result['view_count']);
+     'view_count' => $result['view_count'],
+     'country' => $result['country']);
 
      return $array;
  }

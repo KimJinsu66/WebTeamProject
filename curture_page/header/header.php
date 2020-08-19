@@ -26,7 +26,7 @@
               <ul class="sub">
                   <li><a href="#"><p>아시아</p></a></li>
                   <li><a href="#">한국</a></li>
-                  <li><a href="http://localhost/WebTeamProject/curture_page/page/Japan_review_page.php">일본</a></li>
+                  <li><a href="http://localhost/WebTeamProject/curture_page/page/Japan_review_page.php?page=1">일본</a></li>
               </ul>
               <ul class="sub">
                   <li><a href="#"><p>북아메리카</p></a></li>

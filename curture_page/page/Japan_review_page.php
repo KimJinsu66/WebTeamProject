@@ -1,7 +1,7 @@
 <?php
   include "../common/db.php";
   include "review/lib/get_array.php";
-  include "review/lib/comment_lib.php";
+  include "review/lib/commentWrite.php";
   include "review/lib/get_content.php";
   include "lib/get_genre.php";
   include "lib/make_paging.php";
