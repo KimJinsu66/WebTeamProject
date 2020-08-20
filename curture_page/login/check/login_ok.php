@@ -1,11 +1,6 @@
 <?php
   include "../../common/db.php";
   include "../data/password.php";
-
-  if($_POST['id'] == null || $_POST['password'] == null) {
-    echo "<script>alert('아이디와 비밀번호를 모두 작성해주세요.'); location.href='../login.php';</script>";
-    exit;
-  }
   
   $sql = mq("select * from members where id='".$_POST['id']."'");
   $member = $sql -> fetch_array();

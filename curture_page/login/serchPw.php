@@ -11,10 +11,10 @@
       <div class="serchPw_div">
       <form action="./check/serchPw_ok.php" method="post">
       <div class="serch_id">
-        <input class="id" type="text" name="id" placeholder="ID를 입력해주세요.">
+        <input class="id" type="text" name="id" placeholder="ID를 입력해주세요." required>
       </div>
       <div class="serch_hint">
-        <input class="hint" type="text" name="hint" placeholder="hint를 입력해주세요.">
+        <input class="hint" type="text" name="hint" placeholder="hint를 입력해주세요." required>
       </div>
         <input class="serch_submit" type="submit" name="submit" value="찾기">
       </form>

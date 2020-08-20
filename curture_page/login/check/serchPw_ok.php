@@ -1,12 +1,8 @@
 <?php
-  include "../data/db.php";
+  include "../../common/db.php";
 
   $id = $_POST['id'];
   $hint = $_POST['hint'];
-
-  if($id == null || $hint == null){
-    echo "<script>alert('ID와 hint을 모두 기입해주세요.'); location.href='../serchPw.php';</script>";
-  }
 
   $sql = mq("select * from members where id = '$id' and hint = '$hint'");
   $check = $sql -> num_rows;
