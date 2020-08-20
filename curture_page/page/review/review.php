@@ -22,8 +22,18 @@
   <link rel="stylesheet" href="http://localhost/WebTeamProject/curture_page/home/css/style.css">
   <link rel="stylesheet" href="http://localhost/WebTeamProject/curture_page/page/review/css/review.css">
   <!-- 자바스크립트 가져오기 -->
-  <script src="js/main.js" defer></script>
-  <?php include "../../header/header.php"; ?>
+  <link rel="stylesheet" href="../../header/css/bootstrap.min.css">
+  <!-- 헤더 CSS -->
+  <link rel="stylesheet" href="../../header/css/header.css">
+  <!-- 제이쿼리 -->
+  <script src="../../header/js/jquery-3.5.1.min.js"></script>
+  <!-- 부트스트랩 JS -->
+  <script src="../../header/js/bootstrap.min.js"></script>
+
+  <script src="../js/main.js" defer></script>
+
+
+  <?php include "../../header/header2.php"; ?>
 </head>
 <body>
 <!-- clear : float 영역 지우기 -->
@@ -61,7 +71,7 @@
           <option value="장소">장소</option>
           <option value="놀거리">놀거리</optioon>
         </select>
-        
+
         <input list="browsers" name="genre_title" id="browser" placeholder="선택or검색">
           <datalist id="browsers" name="genre_title">
             <option value="백종원의골목식당">

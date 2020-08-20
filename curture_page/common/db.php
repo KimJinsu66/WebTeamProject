@@ -1,7 +1,7 @@
  <?php
   session_start();
 
-  $db = new mysqli("localhost","jongin","1004","entertripdb");
+  $db = new mysqli("localhost","root","1234","entertripdb");
   $db->set_charset("utf8");
 
   function mq($sql){

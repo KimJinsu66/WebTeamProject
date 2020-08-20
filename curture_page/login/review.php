@@ -21,6 +21,14 @@
   <!-- CSS 스타일 가져오기 -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="./css/review.css">
+  <link rel="stylesheet" href="../header/css/bootstrap.min.css">
+  <!-- 헤더 CSS -->
+  <link rel="stylesheet" href="../header/css/header.css">
+  <!-- 제이쿼리 -->
+  <script src="../header/js/jquery-3.5.1.min.js"></script>
+  <!-- 부트스트랩 JS -->
+  <script src="../header/js/bootstrap.min.js"></script>
+  
   <!-- 자바스크립트 가져오기 -->
   <script src="js/main.js" defer></script>
 </head>

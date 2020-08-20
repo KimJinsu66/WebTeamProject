@@ -21,17 +21,27 @@
     <!-- 구글 폰트 가져오기 -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/default.css" />
+
     <link rel="stylesheet" href="../header/style.css">
     <link rel="stylesheet" href="css/register.css">
+    <!-- 자바스크립트 가져오기 -->
 
-    <script src="../home/js/main.js" defer></script>
+    <link rel="stylesheet" href="../header/css/bootstrap.min.css">
+    <!-- 헤더 CSS -->
+    <link rel="stylesheet" href="../header/css/header.css">
+    <!-- 제이쿼리 -->
+    <script src="../header/js/jquery-3.5.1.min.js"></script>
+    <!-- 부트스트랩 JS -->
+    <script src="../header/js/bootstrap.min.js"></script>
+
+    <?php include "../header/header.php"
+
+    ?>
 </head>
+
 <body>
 
-  <?php include "../header/header.php"
 
-  ?>
 
 
 <form action="./check/register_ok.php" method="post" \>

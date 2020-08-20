@@ -12,9 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>일본페이지</title>
   <!-- 페비콘 가져오기 -->
-  <link rel="icon" type="titleImg" href="../home/imgs/favicon.png">
   <link rel="stylesheet" href="curture/css/mainTextAndreviewLayout.css">
-
   <link rel="stylesheet" href="curture/css/curture_main.css">
 
   <!-- 폰트 어썸 백터 아이콘 가져오기 -->
@@ -22,12 +20,18 @@
   </script>
 
   <!-- 구글 폰트 가져오기 -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
 
-  <link rel="stylesheet" href="../home/css/default.css" />
-  <link rel="stylesheet" href="../header/style.css">
+    <link rel="stylesheet" href="../header/css/bootstrap.min.css">
+    <!-- 헤더 CSS -->
+    <link rel="stylesheet" href="../header/css/header.css">
+    <!-- 제이쿼리 -->
+    <script src="../header/js/jquery-3.5.1.min.js"></script>
+    <!-- 부트스트랩 JS -->
+    <script src="../header/js/bootstrap.min.js"></script>
+  <!-- 메인 JS -->
 
-  <script src="../home/js/main.js" defer></script>
 
   <!--고정 headere-->
   <?php include "../header/header.php"; ?>
@@ -150,7 +154,7 @@
               ?>
               <div class="total">
               <?php echo get_content($fillarray2); ?>
-              
+
 
                   <div class="review_delete">
                     <?php
@@ -229,7 +233,7 @@
                       }
                       // 댓글창을 함수화 해놓은 것을 가져다가 씀
                       echo commentWrite(3, $fillarray3['mem_no'],$fillarray3['review_no'], "",$_GET['kategorie']);
-                        ?>                                          
+                        ?>
                     </div>
                   </div>
                 <?php }  // genre와 kategorie 모두를 선택해서 두가지 조건에 맞는 게시글을 보여주는 경우

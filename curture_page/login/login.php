@@ -14,20 +14,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- HTML 속성 초기화 CSS 가져오기 -->
-    <link rel="stylesheet" href="css/default.css" />
+
     <link rel="stylesheet" href="css/login.css" />
     <!-- CSS 스타일 가져오기 -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- 자바스크립트 가져오기 -->
-    <script src="../home/js/main.js" defer></script>
+
+    <link rel="stylesheet" href="../header/css/bootstrap.min.css">
+    <!-- 헤더 CSS -->
+    <link rel="stylesheet" href="../header/css/header.css">
+    <!-- 제이쿼리 -->
+    <script src="../header/js/jquery-3.5.1.min.js"></script>
+    <!-- 부트스트랩 JS -->
+    <script src="../header/js/bootstrap.min.js"></script>
+
+     <?php include "../header/header.php"
+
+      ?>
   </head>
 
   <body>
 
-    <?php include "../header/header.php"
 
-    ?>
 
     <div class = "login">
       <h1 class="login_header">로그인</h1>

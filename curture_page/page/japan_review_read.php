@@ -19,13 +19,21 @@
   <!-- 폰트 어썸 백터 아이콘 가져오기 -->
   <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous">
   </script>
- 
+
   <!-- 구글 폰트 가져오기 -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../home/css/default.css" />
   <link rel="stylesheet" href="../header/style.css">
-
+  
+  <link rel="stylesheet" href="../header/css/bootstrap.min.css">
+  <!-- 헤더 CSS -->
+  <link rel="stylesheet" href="../header/css/header.css">
+  <!-- 제이쿼리 -->
+  <script src="../header/js/jquery-3.5.1.min.js"></script>
+  <!-- 부트스트랩 JS -->
+  <script src="../header/js/bootstrap.min.js"></script>
+  <!-- <script src="../home/js/main.js" defer></script> -->
   <!-- <script src="../home/js/main.js" defer></script> -->
 
   <!--고정 headere-->
@@ -83,7 +91,7 @@
   $sql = mq("update review set view_count =".$count." where review_no = ".$_GET['review_no']."");
 
   ?>
-  
+
   <!-- 게시글을 불러오는 함수  -->
   <div class="main">
     <div class="kategorie">
