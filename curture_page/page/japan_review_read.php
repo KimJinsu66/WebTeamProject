@@ -19,13 +19,12 @@
   <!-- 폰트 어썸 백터 아이콘 가져오기 -->
   <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous">
   </script>
-
+ 
   <!-- 구글 폰트 가져오기 -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../home/css/default.css" />
-  <link rel="stylesheet" href="../header/style.css">
-  
+  <!-- 자바스크립트 가져오기 -->
+
   <link rel="stylesheet" href="../header/css/bootstrap.min.css">
   <!-- 헤더 CSS -->
   <link rel="stylesheet" href="../header/css/header.css">
@@ -33,7 +32,6 @@
   <script src="../header/js/jquery-3.5.1.min.js"></script>
   <!-- 부트스트랩 JS -->
   <script src="../header/js/bootstrap.min.js"></script>
-  <!-- <script src="../home/js/main.js" defer></script> -->
   <!-- <script src="../home/js/main.js" defer></script> -->
 
   <!--고정 headere-->
@@ -55,8 +53,12 @@
   .comment_container{
     border:1px solid black;
   }
-  .review_delete{
-    text-align:right;
+  .modify_delete_container{
+    display:flex;
+    float:right;
+  }
+  .comment{
+    clear:both;
   }
   .comment_container{
     text-align:left;
@@ -66,6 +68,18 @@
     width:1200px;
     margin:0 auto;
   }
+
+  .comment_date{
+    float:right;
+  }
+  .comment_delete{
+    text-align:right;
+    clear: both;
+  }
+  .comment_description{
+    font-size:1.5em;
+  }
+
   </style>
 </head>
 <body>
@@ -91,11 +105,24 @@
   $sql = mq("update review set view_count =".$count." where review_no = ".$_GET['review_no']."");
 
   ?>
-
-  <!-- 게시글을 불러오는 함수  -->
+  
   <div class="main">
+    <!-- 게시글을 불러오는 함수  -->
     <div class="kategorie">
       <?php echo get_review_content($fillarray); ?>
+    </div>
+
+    <div class="modify_delete_container">
+    <div class="review_modify">
+    <?php
+      if(isset($_SESSION['id'])){
+        if($_SESSION['id'] == $fillarray['id']){?>
+          <form action="./japan_review_modify.php?review_no=<?=$_GET['review_no']?>" method="post">
+          <input type="submit" value="수정">
+          <input type="hidden" name="modify" value="<?=$fillarray['review_no']?>">
+          </form>
+          <?php }
+          }?>
     </div>
 
     <!-- 글쓴 사람에게만 글삭제 권한을 줄 수 있게 해주는 코드  -->
@@ -110,7 +137,7 @@
           <?php }
           }?>
     </div>
-
+    </div>
     <!-- 현재 게시글에 달려있는 댓글을 보여주는 창과 댓글 입력하는 창 -->
     <div class="comment">
       <?php
@@ -123,14 +150,26 @@
 
           ?>
           <div class="comment_container">
-            <div class="">
+            <div class="author">
               <?=$result2['comment_id']?>
             </div>
-            <div class="">
+            <div class="comment_description">
               <?=$result2['comment']?>
             </div>
-            <div class="">
+            <div class="comment_date">
               <?=$result2['comment_date']?>
+            </div>
+            <div class="comment_delete">
+            <?php
+              if(isset($_SESSION['id'])){
+                if($_SESSION['id'] == $result2['comment_id']){?>
+                  <form action="./review/check/comment_delete.php" method="post">
+                  <input type="submit" value="삭제">
+                  <input type="hidden" name="delete" value="<?=$result2['reviewNum']?>">
+                  <input type="hidden" name="comment_no" value="<?=$result2['comment_no']?>">
+                  </form>
+                  <?php }
+                  }?>                  
             </div>
           </div>
       <?php

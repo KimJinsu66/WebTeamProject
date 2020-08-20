@@ -5,8 +5,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
 
       $sql_total = mq("select * from review where title like '%".$search_title."%'");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-  
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
 
@@ -14,8 +18,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
       
       $sql_total = mq("select * from review");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-    
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
 
@@ -23,8 +31,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
       
       $sql_total = mq("select * from review where genre = '".$genre."' and title like '%".$search_title."%'");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-  
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
 
@@ -32,8 +44,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
       
       $sql_total = mq("select * from review where genre = '".$genre."'");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-    
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
 
@@ -41,8 +57,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
       
       $sql_total = mq("select * from review where kategorie = '".$kategorie."' and title like '%".$search_title."%'");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-      
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
 
@@ -50,8 +70,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
       
       $sql_total = mq("select * from review  where kategorie = '".$kategorie."'");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-        
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
 
@@ -60,8 +84,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
       $sql_total = mq("select * from review where genre = '".$genre."' and
                        kategorie = '".$kategorie."' and title like '%".$search_title."%'");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-          
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
 
@@ -69,8 +97,12 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
       
       $sql_total = mq("select * from review where genre = '".$genre."' and kategorie = '".$kategorie."'");
       $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/5;
-            
+      $page_total = $row_total/10;
+      $page_if = $row_total%10;
+      if($row_total >= 10 && $page_if == 0){
+        $page_total -= 1;
+      }
+
       return $page_total;
     break;
   }

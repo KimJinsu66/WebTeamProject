@@ -52,7 +52,7 @@
           <ul class="dropdown-menu country" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">
                 <img src="imgs/korea.png" alt="한국"> 한국</a></li>
-              <li><a class="dropdown-item" href="../page/curture_main.php">
+              <li><a class="dropdown-item" href="../page/japan_review_page.php?page=1">
                 <img src="imgs/japan.png" alt="일본"> 일본</a></li>
               <li><a class="dropdown-item" href="#">
                 <img src="imgs/usa.png" alt="미국"> 미국</a></li>
