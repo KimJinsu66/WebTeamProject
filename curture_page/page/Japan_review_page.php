@@ -13,9 +13,8 @@
   <title>일본페이지</title>
   <!-- 페비콘 가져오기 -->
   <link rel="icon" type="titleImg" href="../home/imgs/favicon.png">
-  <link rel="stylesheet" href="curture/css/mainTextAndreviewLayout.css">
-
   <link rel="stylesheet" href="curture/css/curture_main.css">
+  <link rel="stylesheet" href="curture/css/mainTextAndreviewLayout.css">
 
   <!-- 폰트 어썸 백터 아이콘 가져오기 -->
   <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous">
@@ -72,15 +71,18 @@
       여기는 회원분들의 리뷰를 볼 수 있는 곳입니다. 매너있게 사용해주세요~!
     </div>
   </div>
-  <div class="search">    <!--장르를 선택하고 검색하기 위해서 사용되는 form 태그-->
-    <div class="search_title">
-      <form method="post">
-      <input type="text" class="search_title_text" name="search_title" width="30px;" height="30px;" placeholder="찾으시는 키워드를 입력해주세요">
-      <input type="submit" name="submit" value="검색">
-      <button type="button" name="button" onclick="location.href='review/review.php'">글쓰기</button>
-      <button type="button" name="button" onclick="location.href='Japan_review_page.php?page=1'">홈으로</button></form>
+  <form method="post">
+    <div class="search">    <!--장르를 선택하고 검색하기 위해서 사용되는 form 태그-->    
+      <div class="search_title">
+        <input type="text" class="search_title_text" name="search_title" width="30px;" height="30px;" placeholder="찾으시는 키워드를 입력해주세요">
+        <input type="submit" class="search_submit" name="submit" value="검색">
+      </div>
+      <div class="search_button_box">
+        <button type="button" name="button" onclick="location.href='review/review.php'">글쓰기</button>
+        <button type="button" name="button" onclick="location.href='Japan_review_page.php?page=1'">홈으로</button>
+      </div>
     </div>
-  </div>
+  </form>
     <div class="total">
     <?php
       // genre 와 kategorie 값이 없을경우 , 즉 처음에 화면 들어왔을때 모든 게시판이 보이도록 (limit 사용해서 최대 5개 ) 해주는 코딩
