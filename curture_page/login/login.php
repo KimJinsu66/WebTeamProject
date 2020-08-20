@@ -43,8 +43,8 @@
       <div class="login_div">
       <form action="./check/login_ok.php" method="post">
       <div class="id_pw_textBox">
-        <input class="id" type="text" name="id" placeholder="아이디를 입력해주세요.">
-        <input class="password" type="password" name="password" placeholder="비밀번호를 입력해주세요.">
+        <input class="id" type="text" name="id" placeholder="아이디를 입력해주세요." required>
+        <input class="password" type="password" name="password" placeholder="비밀번호를 입력해주세요." required>
       </div>
       <div class="remember_id">
         <input type="checkbox" checked="checked" name="remember"> 아이디 저장

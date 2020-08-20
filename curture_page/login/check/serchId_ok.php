@@ -1,12 +1,9 @@
 <?php
-  include "../data/db.php";
+  include "../../common/db.php";
 
 
   $name = $_POST['name'];
   $email = $_POST['email'];
-  if($name == null || $email == null){
-    echo "<script>alert('이름과 이메일을 모두 기입해주세요.'); location.href='../serchId.php';</script>";
-  }
 
   $sql = mq("select * from members where name = '$name' and email = '$email'");
   $check = $sql -> num_rows;
