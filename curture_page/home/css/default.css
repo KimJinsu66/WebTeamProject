@@ -69,7 +69,6 @@ body {
   word-break: break-all;
 }
 body,
-input,
 select,
 textarea,
 button {
@@ -146,7 +145,6 @@ select {
 }
 input[type="tel"],
 input[type="time"],
-input[type="text"],
 input[type="password"],
 input[type="search"],
 input[type="email"],
