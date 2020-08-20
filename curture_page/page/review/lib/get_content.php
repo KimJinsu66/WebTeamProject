@@ -27,7 +27,7 @@ $string =
        ".$fillarray['review_date']."
     </div>
     <div class=\"view_count\" style=\"width:50px\">
-      ".$fillarray['view_count']."
+      ".$fillarray['view_count']." 
     </div>";
 
     return $string;

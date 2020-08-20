@@ -2,8 +2,8 @@
 function get_review_content($fillarray){
 
 $string =
-  
-    "<div class=\"review_imformation_container\" style=\"display:flex; color:darksalmon; font-size:1.5em\">
+    "<form method=\"post\" action=\"./review/check/modify_ok.php\">
+     <div class=\"review_imformation_container\" style=\"display:flex; color:darksalmon; font-size:1.5em\">
       <div class=\"\">
         ".$fillarray['country']." > 
       </div>
@@ -18,7 +18,8 @@ $string =
       </div>
     </div>
     <div class=\"review_title\" style=\"display:flex; font-size:3em\">
-      ".$fillarray['title']."
+      제목 <input type=\"text\" name=\"title\" value=\"".$fillarray['title']."\">
+    
     </div>
     <div class=\"review_user_container\" style=\"display:flex\">
       <div class=\"review_user_id\">
@@ -40,7 +41,10 @@ $string =
        <img src=\"http://localhost/WebTeamProject/curture_page/page/review/media/".$fillarray['file']."\" width=\"800px\" height=\"500px\">
     </div>
     <div class=\"review_description\" style=\"font-size:1.5em\">
-       ".$fillarray['description']."
+    <textarea name=\"description\" cols=\"50\" rows=\"20\">".$fillarray['description']."</textarea>
+    <input type=\"hidden\" name=\"review_no\" value=\"".$_GET['review_no']."\">
+    <input type=\"submit\" value=\"수정\">
+    </form>
     </div><br><br>";
 
     return $string;
