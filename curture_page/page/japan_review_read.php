@@ -23,9 +23,15 @@
   <!-- 구글 폰트 가져오기 -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../home/css/default.css" />
-  <link rel="stylesheet" href="../header/style.css">
+  <!-- 자바스크립트 가져오기 -->
 
+  <link rel="stylesheet" href="../header/css/bootstrap.min.css">
+  <!-- 헤더 CSS -->
+  <link rel="stylesheet" href="../header/css/header.css">
+  <!-- 제이쿼리 -->
+  <script src="../header/js/jquery-3.5.1.min.js"></script>
+  <!-- 부트스트랩 JS -->
+  <script src="../header/js/bootstrap.min.js"></script>
   <!-- <script src="../home/js/main.js" defer></script> -->
 
   <!--고정 headere-->
@@ -160,6 +166,7 @@
                   <form action="./review/check/comment_delete.php" method="post">
                   <input type="submit" value="삭제">
                   <input type="hidden" name="delete" value="<?=$result2['reviewNum']?>">
+                  <input type="hidden" name="comment_no" value="<?=$result2['comment_no']?>">
                   </form>
                   <?php }
                   }?>                  
