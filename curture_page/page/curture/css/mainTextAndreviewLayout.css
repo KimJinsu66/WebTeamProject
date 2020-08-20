@@ -3,7 +3,7 @@ body {
 }
 
 .main {
-  text-align: center;
+  text-align: left;
 }
 
 .main-container {
@@ -18,7 +18,7 @@ body {
 }
 .main_subtitle {
   font-size: 1.25em;
-  margin: 1em;
+  margin: 1em 0;
 }
 .review {
   text-align: center;
@@ -31,6 +31,36 @@ body {
 
 .review > div {
   float: left;
+}
+
+.search_title {
+  display: inline-block;
+  width: 45vw;
+  margin-right: 0;
+}
+
+.search_submit {
+  width: 5em;
+  height: 3.4em;
+  border-radius: 5px;
+  background-color: white;;
+}
+ 
+/* review page button */
+.search_title_text {
+  height: 45px;
+  font-size: 2em;
+  width: 30vw;
+  border-radius: 5px;
+}
+
+.search_button_box{
+  float: right;
+}
+
+.search_button_box button {
+  width: 5em;
+  height: 3.4em;
 }
 /*.total {
   float: right;
