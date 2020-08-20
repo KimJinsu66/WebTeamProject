@@ -11,7 +11,9 @@ include "log_head.php";
 
   <?php
        if (isset($_SESSION['id']) ) {
-          session_destroy();
+         session_start();
+         session_unset(); // 세션제거
+         session_destroy(); // 세션삭제
           echo "<script>alert('로그아웃'); location.href='../home/index.php';</script>";
         }
       ?>

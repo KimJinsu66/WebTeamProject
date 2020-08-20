@@ -1,10 +1,10 @@
 <?php
   include "log_head.php";
-  
+
 ?>
 <header>
   <div class="top clear">
-      <h1><a href="../home/index.php" height="5" width"10"><img src="imgs/banner.png" alt="엔터트립"></a></h1>
+      <h1><a href="../home/index.php" height="5" width"10"><img src="http://localhost/WebTeamProject/curture_page/home/imgs/banner.png" alt="엔터트립"></a></h1>
   </div>
 
   <div class="search-box">
@@ -26,7 +26,7 @@
               <ul class="sub">
                   <li><a href="#"><p>아시아</p></a></li>
                   <li><a href="#">한국</a></li>
-                  <li><a href="../country/curture_main.php">일본</a></li>
+                  <li><a href="http://localhost/WebTeamProject/curture_page/page/Japan_review_page.php?page=1">일본</a></li>
               </ul>
               <ul class="sub">
                   <li><a href="#"><p>북아메리카</p></a></li>
@@ -103,8 +103,8 @@
             <?php
 
             if(!$jb_login){
-              echo "<a href=\"../login/login.php\">로그인</a>";
-              echo "<a href=\"../login/register.php\">회원가입</a>";
+              echo "<a href=\"http://localhost/WebTeamProject/curture_page/login/login.php\">로그인</a>";
+              echo "<a href=\"http://localhost/WebTeamProject/curture_page/login/register.php\">회원가입</a>";
             } else {
               $id = $_SESSION['id'];
               //echo "님 환영합니다.";
