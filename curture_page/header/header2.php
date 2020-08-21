@@ -1,3 +1,4 @@
+<?php include "log_head.php";?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -17,17 +18,27 @@
       </div>
       <!-- 로고 -->
       <div class="logo d-flex justify-content-center align-items-center col-md-4">
-        <a href="../../home/index.php"><img src="../imgs/brand_logo.png" alt="엔터트립"></a>
+        <a href="../home/index.php"><img src="imgs/brand_logo.png" alt="엔터트립"></a>
       </div>
       <!-- 로그인 -->
       <div class="col-md-4 d-flex justify-content-end align-items-center">
+  <?php  if(!$jb_login){ ?>
         <div class="mr-2">
           <button type="button" class="btn btn-danger" onclick = "location.href = '../login/login.php'">로그인</button>
         </div>
         <div class="ml-2">
           <button type="button" class="btn btn-outline-danger" onclick = "location.href = '../login/register.php'">회원가입</button>
-        </div>
+        </div> <?php } else {
+          $id = $_SESSION['id'];
+        //echo "님 환영합니다.";
+        echo "<form action=\"../header/logout.php\" method=\"post\">
+        <input type=\"text\" style=\"width:180px;height:14px;font-size:14px;\" value=\"$id 님 환영합니다\" readonly>
+        <input type=\"submit\" name=\"submit\" value=\"로그아웃\">
+        </form>";
+
+        }  ?>
       </div>
+
     </div>
   </div>
   <!-- 네비게이션바 -->
@@ -41,7 +52,7 @@
           <ul class="dropdown-menu country" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">
                 <img src="imgs/korea.png" alt="한국"> 한국</a></li>
-              <li><a class="dropdown-item" href="../page/curture_main.php">
+              <li><a class="dropdown-item" href="../page/japan_review_page.php?page=1">
                 <img src="imgs/japan.png" alt="일본"> 일본</a></li>
               <li><a class="dropdown-item" href="#">
                 <img src="imgs/usa.png" alt="미국"> 미국</a></li>
@@ -69,4 +80,6 @@
       </ul>
     </div>
   </nav>
+
+
 </header>

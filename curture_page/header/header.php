@@ -31,9 +31,9 @@
         </div> <?php } else {
           $id = $_SESSION['id'];
         //echo "님 환영합니다.";
+        echo "<span class=\"badge badge-light\">$id 님 안녕하세요~!</span>";
         echo "<form action=\"../header/logout.php\" method=\"post\">
-        <input type=\"text\" style=\"width:180px;height:14px;font-size:14px;\" value=\"$id 님 환영합니다\" readonly>
-        <input type=\"submit\" name=\"submit\" value=\"로그아웃\">
+        <input class=\"btn btn-danger\" type=\"submit\" name=\"submit\" value=\"로그아웃\">
         </form>";
 
         }  ?>
