@@ -41,6 +41,13 @@
     #paging{
       text-align:center;
     }
+    .review_title {
+      display: inline-block;
+      width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; 
+    }
   </style>
 
   <?php include "../header/header.php"; ?>
@@ -96,6 +103,7 @@
     <?php
       // genre 와 kategorie 값이 없을경우 , 즉 처음에 화면 들어왔을때 모든 게시판이 보이도록 (limit 사용해서 최대 5개 ) 해주는 코딩
     if(!isset($_GET['genre']) && !isset($_GET['kategorie'])){
+      // 페이징 만들어주는 함수 @@ 검색있을 때랑 없을 경우 
       if(isset($_POST['search_title'])){ 
         $page_total = make_paging_number(1,$_POST['search_title'],"","");
         ?>

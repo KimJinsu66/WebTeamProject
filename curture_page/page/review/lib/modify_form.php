@@ -1,5 +1,5 @@
 <?php
-function get_review_content($fillarray){
+function modify_form($fillarray){
 if(!isset($fillarray['file'])){
   $string =
   "<form method=\"post\" action=\"./review/check/modify_ok.php\">

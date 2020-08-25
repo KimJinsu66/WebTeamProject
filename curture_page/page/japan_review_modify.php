@@ -89,7 +89,7 @@
   <div class="main">
     <!-- 게시글을 불러오는 함수  -->
     <div class="kategorie">
-      <?php echo get_review_content($fillarray); ?>
+      <?php echo modify_form($fillarray); ?>
     </div>
 
 
