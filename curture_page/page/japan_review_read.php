@@ -147,7 +147,6 @@
       if(!$low == 0){
         for($j=1; $j<=$low; $j++){
           $result2 =$sql2 -> fetch_array();
-
           ?>
           <div class="comment_container">
             <div class="author">
