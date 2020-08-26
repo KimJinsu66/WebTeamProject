@@ -1,6 +1,6 @@
 <?php
 function get_review_content($fillarray){
-if(isset($fillarray['file'])){
+if(!$fillarray['file'] == ""){
   $string =
   
     "<div class=\"review_imformation_container\" style=\"display:flex; color:darksalmon; font-size:1.5em\">

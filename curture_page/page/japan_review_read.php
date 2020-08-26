@@ -1,6 +1,6 @@
 <?php
   include "../common/db.php";
-  include "review/lib/get_array.php";
+  include "review/lib/get_array_review.php";
   include "review/lib/commentWrite.php";
   include "review/lib/get_review_content.php";
   include "lib/get_genre.php";
@@ -93,11 +93,14 @@
     <div class="">
       <a href="./japan_review_page.php?page=1">목록</a>
     </div>
+    <div class="#">
+      <a href="./review/check/bookmark_ok.php?review_no=<?=$_GET['review_no']?>">즐겨찾기</a>
+    </div>
   </div>
   <?php
   $sql = mq("select * from review where review_no = ".$_GET['review_no']."");
   $result = $sql -> fetch_array();
-  $fillarray = get_array($result);
+  $fillarray = get_array_review($result);
 
   // 게시글 들어올때마다 조회수가 오르도록 해놨음 .
   $count = $fillarray['view_count'];

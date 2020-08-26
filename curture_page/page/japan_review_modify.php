@@ -1,6 +1,6 @@
 <?php
   include "../common/db.php";
-  include "review/lib/get_array.php";
+  include "review/lib/get_array_review.php";
   include "review/lib/modify_form.php";
   include "lib/get_genre.php";
 ?>
@@ -83,7 +83,7 @@
   <?php
   $sql = mq("select * from review where review_no = ".$_GET['review_no']."");
   $result = $sql -> fetch_array();
-  $fillarray = get_array($result);
+  $fillarray = get_array_review($result);
   ?>
   
   <div class="main">

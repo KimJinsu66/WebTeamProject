@@ -35,8 +35,10 @@
         echo "<form action=\"../header/logout.php\" method=\"post\">
         <input class=\"btn btn-danger\" type=\"submit\" name=\"submit\" value=\"로그아웃\">
         </form>";
-
-        }  ?>
+        ?>
+        
+        <button type="button" onclick="location.href='../page/mypage.php' ">마이페이지</button>
+      <?php }  ?>
       </div>
 
     </div>

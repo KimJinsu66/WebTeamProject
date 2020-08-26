@@ -5,7 +5,7 @@ function commentWrite($mem_no, $comment){
     $string = "<form action=\"../page/review/check/comment_ok.php\" method=\"post\">
     <input type=\"hidden\" name=\"mem_no\" value=\"$mem_no\">
     <input type=\"hidden\" name=\"review_no\" value=\"$comment\">
-    <textarea name=\"comment\" rows=\"10\" cols=\"40\"></textarea>
+    <textarea name=\"comment\" rows=\"5\" cols=\"150\"></textarea>
     <input type=\"submit\" name=\"submit\" value=\"댓글\">
     </form>";
     return $string;

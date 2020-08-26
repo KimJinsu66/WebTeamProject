@@ -1,7 +1,3 @@
-body {
-  height: 3000px;
-}
-
 .main {
   text-align: left;
 }
@@ -43,9 +39,9 @@ body {
   width: 5em;
   height: 3.4em;
   border-radius: 5px;
-  background-color: white;;
+  background-color: white;
 }
- 
+
 /* review page button */
 .search_title_text {
   height: 45px;
@@ -54,7 +50,7 @@ body {
   border-radius: 5px;
 }
 
-.search_button_box{
+.search_button_box {
   float: right;
 }
 
