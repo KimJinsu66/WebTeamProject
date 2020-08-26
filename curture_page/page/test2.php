@@ -1,8 +1,9 @@
 <?php 
-include "../common/db.php";
+  include "../common/db.php";
 
-$sql =  mq("TRUNCATE TABLE comment where comment_no= 1");
+  $sql = mq("select * from members_bookmark where reviewNum like = 25 and membersNum = 1");
+  $result = $sql -> fetch_array();
 
-var_dump($sql);
+  echo $result['membersNum'];
 
 ?>

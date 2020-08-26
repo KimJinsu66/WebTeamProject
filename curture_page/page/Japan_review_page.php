@@ -1,6 +1,6 @@
 <?php
   include "../common/db.php";
-  include "review/lib/get_array.php";
+  include "review/lib/get_array_review.php";
   include "review/lib/commentWrite.php";
   include "review/lib/get_content.php";
   include "lib/get_genre.php";
@@ -131,7 +131,7 @@
         $result =$sql -> fetch_array();
     
         //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-        $fillarray = get_array($result); ?>
+        $fillarray = get_array_review($result); ?>
 
         <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
       <div class="review">
@@ -165,7 +165,7 @@
         $result =$sql -> fetch_array();
 
         //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-        $fillarray = get_array($result);
+        $fillarray = get_array_review($result);
         ?>
         <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
         <div class="review">
@@ -200,7 +200,7 @@
           $result =$sql -> fetch_array();
 
           //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-          $fillarray = get_array($result);
+          $fillarray = get_array_review($result);
           ?>
           <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
           <div class="review">
@@ -235,7 +235,7 @@
           $result =$sql -> fetch_array();
 
           //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-          $fillarray = get_array($result);
+          $fillarray = get_array_review($result);
           ?>
           <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
           <div class="review">
@@ -243,7 +243,6 @@
           </div>
           <?php }
           } ?>
-  </div>
-
+    </div>
   </body>
 </html>

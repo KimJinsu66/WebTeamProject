@@ -1,6 +1,6 @@
 <?php
 function modify_form($fillarray){
-if(!isset($fillarray['file'])){
+if($fillarray['file'] == ""){
   $string =
   "<form method=\"post\" action=\"./review/check/modify_ok.php\">
    <div class=\"review_imformation_container\" style=\"display:flex; color:darksalmon; font-size:1.5em\">
