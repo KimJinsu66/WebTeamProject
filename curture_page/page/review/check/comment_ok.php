@@ -18,7 +18,12 @@
   } else {
   $sql = mq("insert into comment(comment, reviewNum, comment_id, comment_date)
             values('".$comment."', '".$review_no."','".$id."', now())");
+  //사용자의 현재 point의 db값을 가져오기 위함            
+  $sql2 = mq("select * from members where id ='".$_SESSION['id']."' ");
+  $result = $sql2 -> fetch_array();
     if($sql){
+      //사용자가 댓글을 달면 point를 1씩 주기 위함
+      $sql3 = mq("update members set point ='".$result['point']."'+1 where id ='".$_SESSION['id']."' ");
       header("Location: ../../japan_review_read.php?review_no=$review_no");
     } else {
       echo "<script>alert('작성 실패했습니다.'); history.back();</script>";
