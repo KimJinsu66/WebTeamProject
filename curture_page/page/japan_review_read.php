@@ -5,6 +5,8 @@
   include "review/lib/get_review_content.php";
   include "lib/get_genre.php";
   include "lib/make_paging.php";
+
+  $url ="./review/check/review_delete.php?review_no=".$_GET['review_no'];
 ?>
 <head>
   <meta charset="utf-8">
@@ -81,6 +83,19 @@
   }
 
   </style>
+  <script type="text/javascript">
+    function confirmation() {
+    //사용방법은 아래와 같다. answer의 변수를 받아 true/false값에 따라서 맞는 기능을 코딩하면 된다.
+      var url = "<?= $url ?>";
+      var answer = confirm("정말로 삭제 하시겠습니까??")
+      if (answer){        
+        window.location = url;
+      }
+      else{
+        location.reload();
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="button_container">
@@ -134,7 +149,7 @@
       if(isset($_SESSION['id'])){
         if($_SESSION['id'] == $fillarray['id']){?>
           <form action="./review/check/review_delete.php" method="post">
-          <input type="submit" value="삭제">
+          <input type="button" onclick="confirmation()" value="삭제">
           <input type="hidden" name="delete" value="<?=$fillarray['review_no']?>">
           </form>
           <?php }

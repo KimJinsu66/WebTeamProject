@@ -34,35 +34,30 @@
   //   exit;
   // }
     
-    //사용자의 현재 point의 db값을 가져오기 위함 
-    $sql = mq("select * from members where id ='".$_SESSION['id']."' ");
-    $result = $sql -> fetch_array();
-    //사진을 넣었을 경우와 안넣었을 경우 따로 따로 되도록 해놨음
-    if($o_name != null){
+  //사용자의 현재 point의 db값을 가져오기 위함 
+  $sql = mq("select * from members where id ='".$_SESSION['id']."' ");
+  $result = $sql -> fetch_array();
+
+  //사진을 넣었을 경우와 안넣었을 경우 따로 따로 되도록 해놨음
+  if($o_name != null){
     $sql2 = mq("insert into review(id, title, description, file, memberNum, genre, kategorie, review_date, genre_title, country)
-                values('".$_SESSION['id']."', '".$total_title."', '".$description."', '".$o_name."', '".$member_no['mem_no']."', '".$genre."',
-                 '".$kategorie."',now(),'".$genre_title."', '".$country."')");
-      if($sql){
-        //사용자가 글을 쓰면 point를 3씩 주기 위한 코딩 
-        $sql3 = mq("update members set point ='".$result['point']."'+3 where id ='".$_SESSION['id']."' ");
-        // 글쓰기에 성공했다는 알림을 보여준 뒤에 확인을 누르면 다시 게시글 목록으로 보내주기 위함
-        echo "<script>alert('글쓰기 성공했습니다.'); location.href=
-        'http://localhost/WebTeamProject/curture_page/page/Japan_review_page.php?page=1';</script>";
-      } else{
-        echo "<script>alert('글쓰기 실패했습니다..'); history.back();</script>";
-      }
-    } else {
+              values('".$_SESSION['id']."', '".$total_title."', '".$description."', '".$o_name."', '".$member_no['mem_no']."', '".$genre."',
+              '".$kategorie."',now(),'".$genre_title."', '".$country."')");  
+    $check = true;
+  } else {
       $sql2 = mq("insert into review(id, title, description, memberNum, genre, kategorie, review_date, genre_title, country)
-                values('".$_SESSION['id']."', '".$total_title."', '".$description."', '".$member_no['mem_no']."', '".$genre."',
-                 '".$kategorie."',now(),'".$genre_title."', '".$country."')");
-      if($sql){
-        //사용자가 글을 쓰면 point를 3씩 주기 위한 코딩 
-        $sql3 = mq("update members set point ='".$result['point']."'+3 where id ='".$_SESSION['id']."' ");
-        // 글쓰기에 성공했다는 알림을 보여준 뒤에 확인을 누르면 다시 게시글 목록으로 보내주기 위함
-        echo "<script>alert('글쓰기 성공했습니다.'); location.href=
-        'http://localhost/WebTeamProject/curture_page/page/Japan_review_page.php?page=1';</script>";
-      } else {  
-        echo "<script>alert('글쓰기 실패했습니다.'); history.back();</script>";
-      } 
+              values('".$_SESSION['id']."', '".$total_title."', '".$description."', '".$member_no['mem_no']."', '".$genre."',
+              '".$kategorie."',now(),'".$genre_title."', '".$country."')");
+      $check = true;
+  }
+  
+  //사용자가 글을 쓰면 point를 3씩 주기 위한 코딩 
+  // 글쓰기에 성공했다는 알림을 보여준 뒤에 확인을 누르면 다시 게시글 목록으로 보내주기 위함 
+  if($check){  
+    $sql3 = mq("update members set point ='".$result['point']."'+3 where id ='".$_SESSION['id']."' ");
+      echo "<script>alert('글쓰기 성공했습니다.'); location.href=
+      'http://localhost/WebTeamProject/curture_page/page/Japan_review_page.php?page=1';</script>";
+  } else {
+      echo "<script>alert('글쓰기 실패했습니다..'); history.back();</script>";
   }
  ?>
