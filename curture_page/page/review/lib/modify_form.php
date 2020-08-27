@@ -1,4 +1,5 @@
 <?php
+//사진파일이 있을경우 없을 경우에 따라 다르게 조건 
 function modify_form($fillarray){
 if($fillarray['file'] == ""){
   $string =
