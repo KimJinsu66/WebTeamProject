@@ -17,7 +17,7 @@
  
 
   if(password_verify($password, $hash_pw)){
-    $sql = mq("delete from members where id ='".$id."'");    
+    $sql = mq("delete from members where id ='".$id."'");
     echo "<script>alert('회원탈퇴가 되었습니다. 그 동안 즐거웠습니다...'); location.href='../../home';</script>";
     session_destroy();
     exit;

@@ -20,13 +20,11 @@
     $_SESSION['password'] = $member["password"];
     //일반회원과 관리자들을 따로따로 홈페이지로 보내주기 위해서 추가 조건
     if($rank == "member") {
-      echo "<script>alert('로그인 되었습니다.'); location.href='../../home/index.php';</script>";
+      echo "<script>alert('로그인 되었습니다.'); location.href='../../home';</script>";
     } else {
       echo "<script>alert('로그인 되었습니다.'); location.href='../../home/index.php';</script>";
     }
   } else {
     echo "<script>alert('아이디 또는 비밀번호를 정확히 입력해주세요.'); location.href='../login.php';</script>";
-
   }
-
  ?>
