@@ -5,7 +5,7 @@
   include "review/lib/get_content.php";
   include "lib/get_genre.php";
   include "lib/make_paging.php";
-  include "lib/make_paging_number.php";
+  include "lib/make_paging_number2.php";
 ?>
 <head>
   <meta charset="utf-8">

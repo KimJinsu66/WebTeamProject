@@ -5,6 +5,8 @@
   include "review/lib/get_review_content.php";
   include "lib/get_genre.php";
   include "lib/make_paging.php";
+
+  $url ="./review/check/review_delete.php?review_no=".$_GET['review_no'];
 ?>
 <head>
   <meta charset="utf-8">
@@ -34,53 +36,20 @@
   <script src="../header/js/bootstrap.min.js"></script>
   <!-- <script src="../home/js/main.js" defer></script> -->
 
+  <!-- revew_read_page css -->
+  <link rel="stylesheet" href="./css/review_read.css">
   <!--고정 headere-->
   <?php include "../header/header.php"; ?>
-  <style>
-  .button_container{
-    display:flex;
-  }
-  .button_container > div {
-    text-align:center;
-    width: 60px;
-    margin: 10px;
-    border:1px solid black;
-    border-radius:1px;
-  }
-  div > a {
-    width:60px;
-  }
-  .comment_container{
-    border:1px solid black;
-  }
-  .modify_delete_container{
-    display:flex;
-    float:right;
-  }
-  .comment{
-    clear:both;
-  }
-  .comment_container{
-    text-align:left;
-  }
-  .main{
-    border:1px solid black;
-    width:1200px;
-    margin:0 auto;
-  }
-
-  .comment_date{
-    float:right;
-  }
-  .comment_delete{
-    text-align:right;
-    clear: both;
-  }
-  .comment_description{
-    font-size:1.5em;
-  }
-
-  </style>
+  
+  <script type="text/javascript">
+    function confirmation() {
+    //사용방법은 아래와 같다. answer의 변수를 받아 true/false값에 따라서 맞는 기능을 코딩하면 된다.
+      let url = "<?= $url ?>";
+      let answer = confirm("정말로 삭제 하시겠습니까??")
+      
+      answer ? window.location = url : location.reload();         
+    }
+  </script>
 </head>
 <body>
   <div class="button_container">
@@ -134,7 +103,7 @@
       if(isset($_SESSION['id'])){
         if($_SESSION['id'] == $fillarray['id']){?>
           <form action="./review/check/review_delete.php" method="post">
-          <input type="submit" value="삭제">
+          <input type="button" onclick="confirmation()" value="삭제">
           <input type="hidden" name="delete" value="<?=$fillarray['review_no']?>">
           </form>
           <?php }

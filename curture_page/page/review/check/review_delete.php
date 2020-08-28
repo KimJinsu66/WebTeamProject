@@ -1,7 +1,7 @@
 <?php
   include "../../../common/db.php";
 
-  $review_no = $_POST['delete'];
+  $review_no = $_GET['review_no'];
   echo $review_no;
   if($review_no == null){
     echo "<script>alert('존재하지 않는 글입니다'); location.href='../review_read.php';</script>";
