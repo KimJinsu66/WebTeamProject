@@ -17,9 +17,9 @@
         
 
         $(window).scroll(function (evt) {
-          var nowScrollVar = $(this).scrollTop();
-          var nowScrollVar2 = $(this).height();
-          var contentH = $("#divContent").height(); //문서 전체 내용을 갖는 div의 높이
+          let nowScrollVar = $(this).scrollTop();
+          let nowScrollVar2 = $(this).height();
+          let contentH = $("#divContent").height(); //문서 전체 내용을 갖는 div의 높이
           console.log(nowScrollVar);
           console.log(nowScrollVar2);
           console.log(contentH);
@@ -41,7 +41,7 @@
               $array = get_array($result);    
             ?>
             
-            var text = {
+            let text = {
               'review_no': "<?=$array['review_no']?>",
               'country': "<?=$array['country']?>",
               'genre': "<?=$array['genre']?>",

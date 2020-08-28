@@ -30,54 +30,12 @@
   <!-- 부트스트랩 JS -->
   <script src="../header/js/bootstrap.min.js"></script>
   <!-- <script src="../home/js/main.js" defer></script> -->
-
+  
+  <!-- review_modify_page css -->
+  <link rel="stylesheet" href="./css/review_modify.css">
   <!--고정 headere-->
   <?php include "../header/header.php"; ?>
-  <style>
-  .button_container{
-    display:flex;
-  }
-  .button_container > div {
-    text-align:center;
-    width: 60px;
-    margin: 10px;
-    border:1px solid black;
-    border-radius:1px;
-  }
-  div > a {
-    width:60px;
-  }
-  .comment_container{
-    border:1px solid black;
-  }
-  .modify_delete_container{
-    display:flex;
-    float:right;
-  }
-  .comment{
-    clear:both;
-  }
-  .comment_container{
-    text-align:left;
-  }
-  .main{
-    border:1px solid black;
-    width:1200px;
-    margin:0 auto;
-  }
 
-  .comment_date{
-    float:right;
-  }
-  .comment_delete{
-    text-align:right;
-    clear: both;
-  }
-  .comment_description{
-    font-size:1.5em;
-  }
-
-  </style>
 </head>
 <body>
   <?php

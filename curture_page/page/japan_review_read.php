@@ -36,64 +36,18 @@
   <script src="../header/js/bootstrap.min.js"></script>
   <!-- <script src="../home/js/main.js" defer></script> -->
 
+  <!-- revew_read_page css -->
+  <link rel="stylesheet" href="./css/review_read.css">
   <!--고정 headere-->
   <?php include "../header/header.php"; ?>
-  <style>
-  .button_container{
-    display:flex;
-  }
-  .button_container > div {
-    text-align:center;
-    width: 60px;
-    margin: 10px;
-    border:1px solid black;
-    border-radius:1px;
-  }
-  div > a {
-    width:60px;
-  }
-  .comment_container{
-    border:1px solid black;
-  }
-  .modify_delete_container{
-    display:flex;
-    float:right;
-  }
-  .comment{
-    clear:both;
-  }
-  .comment_container{
-    text-align:left;
-  }
-  .main{
-    border:1px solid black;
-    width:1200px;
-    margin:0 auto;
-  }
-
-  .comment_date{
-    float:right;
-  }
-  .comment_delete{
-    text-align:right;
-    clear: both;
-  }
-  .comment_description{
-    font-size:1.5em;
-  }
-
-  </style>
+  
   <script type="text/javascript">
     function confirmation() {
     //사용방법은 아래와 같다. answer의 변수를 받아 true/false값에 따라서 맞는 기능을 코딩하면 된다.
-      var url = "<?= $url ?>";
-      var answer = confirm("정말로 삭제 하시겠습니까??")
-      if (answer){        
-        window.location = url;
-      }
-      else{
-        location.reload();
-      }
+      let url = "<?= $url ?>";
+      let answer = confirm("정말로 삭제 하시겠습니까??")
+      
+      answer ? window.location = url : location.reload();         
     }
   </script>
 </head>
