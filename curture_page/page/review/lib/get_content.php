@@ -17,8 +17,8 @@ $string =
     <div class=\"genre_title\" style=\"width:200px\">
     ".$fillarray['genre_title']."
     </div>
-    <div class=\"review_title\" style=\"width:350px\">
-       <a href=\"japan_review_read.php?review_no=".$fillarray['review_no']."\">".$fillarray['title']."</a>
+    <div class=\"review_title\" style=\"width:350px\">       
+       <a type=\"button\" href=\"japan_review_read.php?review_no=".$fillarray['review_no']."\" target=\"_top\">".$fillarray['title']."</a>
     </div>
     <div class=\"review_user\" style=\"width:100px\">
       ".$fillarray['id']."
