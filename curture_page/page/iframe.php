@@ -36,17 +36,20 @@
   <!--고정 headere-->
 
   <style>
+
     #paging{
       text-align:center;
       margin-top:60px;
     }
+
     .review_title {
-      /* display: inline-block; */
+      display: inline-block;
       width: 200px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; 
-    }
+    }    
+    
   </style>
 
 <!--genre 부분을 가져오는 함수  -->
@@ -129,10 +132,10 @@
       <?php for($i=0; $i<$numPage; $i++){ ?> 
         <a href="iframe.php?page=<?=($i+1)?>"><?=($i+1)?></a>
       <?php }?></div>
-      <?php
+    <?php }
 
-      // genre 만 선택하고 kategorie 는 선택하지 않았을경우의 게시글을 보여주는 코딩
-    } else if (isset($_GET['genre']) && !isset($_GET['kategorie'])){
+    // genre 만 선택하고 kategorie 는 선택하지 않았을경우의 게시글을 보여주는 코딩
+    if(isset($_GET['genre']) && !isset($_GET['kategorie'])){
       if(isset($_GET['page'])){
         $page = (int) $_GET['page'];
       }else{
@@ -169,10 +172,10 @@
       <?php for($i=0; $i<$numPage; $i++){ ?> 
         <a href="iframe.php?page=<?=($i+1)?>"><?=($i+1)?></a>
       <?php }?></div>
-      <?php
+      <?php }
 
-       // kategorie만 선택하고 genre는 선택하지 않았을경우의 게시글
-      } else if (!isset($_GET['genre']) && isset($_GET['kategorie'])){
+      // kategorie만 선택하고 genre는 선택하지 않았을경우의 게시글
+      if(!isset($_GET['genre']) && isset($_GET['kategorie'])){
         if(isset($_GET['page'])){
           $page = (int) $_GET['page'];
         }else{
@@ -209,10 +212,10 @@
         <?php for($i=0; $i<$numPage; $i++){ ?> 
           <a href="iframe.php?page=<?=($i+1)?>"><?=($i+1)?></a>
         <?php }?></div>
-        <?php        
-        
-        // genre와 kategorie 모두를 선택해서 두가지 조건에 맞는 게시글을 보여주는 경우
-      } else if (isset($_GET['genre']) && isset($_GET['kategorie'])){
+      <?php }
+
+      // genre와 kategorie 모두를 선택해서 두가지 조건에 맞는 게시글을 보여주는 경우
+      if(isset($_GET['genre']) && isset($_GET['kategorie'])){
         if(isset($_GET['page'])){
           $page = (int) $_GET['page'];
         }else{

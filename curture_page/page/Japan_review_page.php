@@ -38,22 +38,12 @@
   <!--고정 headere-->
 
   <style>
-  .iframe{
-    width:1400px;
-    margin:0 auto;
-  }
-    #paging{
-      text-align:center;
-      margin-top:60px;
-    }
 
-    .review_title {
-      /* display: inline-block; */
-      width: 200px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis; 
+    .iframe{
+      width:1400px;
+      margin:0 auto;
     }
+    
   </style>
 
   <?php include "../header/header.php"; ?>
