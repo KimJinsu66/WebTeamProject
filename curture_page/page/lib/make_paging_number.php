@@ -4,108 +4,100 @@ function make_paging_number($i, $search_title, $genre, $kategorie){
   switch($i){
     case 1:
       // 카테고리 x 장르 x 검색 o 일 경우
-      $sql_total = mq("select * from review where title like '%".$search_title."%'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+    $sql = mq("SELECT * FROM review WHERE title LIKE '%{$search_title}%'");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
 
     case 2:
       // 카테고리 x 장르 x 검색 x 일 경우
-      $sql_total = mq("select * from review");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+      $sql = mq("SELECT * FROM review");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
 
     case 3:
       // 카테고리 x 장르 o 검색 o 일 경우
-      $sql_total = mq("select * from review where genre = '".$genre."' and title like '%".$search_title."%'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+      $sql = mq("SELECT * FROM review WHERE genre = '{$genre}' and title LIKE '%{$search_title}%'");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
 
     case 4:
       // 카테고리 x 장르 o 검색 x 일 경우
-      $sql_total = mq("select * from review where genre = '".$genre."'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+      $sql = mq("SELECT * FROM review WHERE genre = '{$genre}'");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
 
     case 5:
       // 카테고리 o 장르 x 검색 o 일 경우
-      $sql_total = mq("select * from review where kategorie = '".$kategorie."' and title like '%".$search_title."%'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+      $sql = mq("SELECT * FROM review WHERE kategore = '{$kategore}' and title LIKE '%{$search_title}%'");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
 
     case 6:
       // 카테고리 o 장르 x 검색 x 일 경우
-      $sql_total = mq("select * from review  where kategorie = '".$kategorie."'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+      $sql = mq("SELECT * FROM review WHERE kategorie = '{$kategorie}'");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
 
     case 7:
       // 카테고리 o 장르 o 검색 o 일 경우
-      $sql_total = mq("select * from review where genre = '".$genre."' and
-                       kategorie = '".$kategorie."' and title like '%".$search_title."%'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+      $sql = mq("SELECT * FROM review WHERE kategore = '{$kategore}' and genre = '{$genre}' 
+                and title LIKE '%{$search_title}%'");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
 
     case 8:
       // 카테고리 o 장르 o 검색 x 일 경우
-      $sql_total = mq("select * from review where genre = '".$genre."' and kategorie = '".$kategorie."'");
-      $row_total = $sql_total -> num_rows;
-      $page_total = $row_total/10;
-      $page_if = $row_total%10;
-      if($row_total >= 10 && $page_if == 0){
-        $page_total -= 1;
-      }
+      $sql = mq("SELECT * FROM review WHERE kategore = '{$kategore}' and genre = '{$genre}'");
+        //한페이지에 나올 view 수 
+        $numView = 10;
+        //review table의 총 레코드 수
+        $totalRecord = $sql->num_rows;
+        //페이지 수
+        $numPage = ceil($totalRecord / $numView);
 
-      return $page_total;
-    break;
+      return $numPage;
   }
 }
 ?>

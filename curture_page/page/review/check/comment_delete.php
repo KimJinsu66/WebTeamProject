@@ -11,8 +11,7 @@
     $sql = mq("delete from comment where comment_no = '".$comment_no."'");  
     if(isset($sql)){
       echo "<script>alert('삭제 되었습니다.'); history.back();</script>";
-      exit;
-      
+      exit;      
     } else {
       echo "<script>alert('삭제 실패'); history.back();</script>";
       exit;
