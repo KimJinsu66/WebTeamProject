@@ -1,11 +1,14 @@
 <?php
   include "../common/db.php";
-  include "review/lib/get_array_review.php";
-  include "review/lib/commentWrite.php";
-  include "review/lib/get_content.php";
+  // include "review/lib/get_array_review.php";
+  // include "review/lib/commentWrite.php";
+  // include "review/lib/get_content.php";
   include "lib/get_genre.php";
   include "lib/make_paging.php";
   include "lib/make_paging_number2.php";
+  include "review/lib/get_class.php";
+
+  $get = new get;
 ?>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -120,10 +123,10 @@
       for($i=1; $i<=$low; $i++){
         $result =$sql -> fetch_array();      
         //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-        $fillarray = get_array_review($result); ?>
+        $fillarray = $get -> get_array_review($result); ?>
         <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
         <div class="review">
-            <?php echo get_content($fillarray); ?>   
+            <?php echo $get -> get_content($fillarray); ?>   
         </div>
     <?php }
         $numPage = make_paging_number($num,$search_title,"","");
@@ -160,10 +163,10 @@
       for($i=1; $i<=$low; $i++){
         $result =$sql -> fetch_array();      
         //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-        $fillarray = get_array_review($result); ?>
+        $fillarray = $get -> get_array_review($result); ?>
         <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
         <div class="review">
-            <?php echo get_content($fillarray); ?>   
+            <?php echo $get -> get_content($fillarray); ?>   
         </div>
     <?php }
         $numPage = make_paging_number($num,$search_title,$_GET['genre'],"");
@@ -200,10 +203,10 @@
         for($i=1; $i<=$low; $i++){
           $result =$sql -> fetch_array();      
           //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-          $fillarray = get_array_review($result); ?>
+          $fillarray = $get -> get_array_review($result); ?>
           <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
           <div class="review">
-              <?php echo get_content($fillarray); ?>   
+              <?php echo $get -> get_content($fillarray); ?>   
           </div>
       <?php }
           $numPage = make_paging_number($num,$search_title,"",$_GET['kategorie']);
@@ -242,10 +245,10 @@
         for($i=1; $i<=$low; $i++){
           $result =$sql -> fetch_array();      
           //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
-          $fillarray = get_array_review($result); ?>
+          $fillarray = $get -> get_array_review($result); ?>
           <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
           <div class="review">
-              <?php echo get_content($fillarray); ?>   
+              <?php echo $get -> get_content($fillarray); ?>   
           </div>
       <?php }
           $numPage = make_paging_number($num,$search_title,$_GET['genre'],$_GET['kategorie']);
