@@ -31,13 +31,14 @@
         </div> <?php } else {
           $id = $_SESSION['id'];
         //echo "님 환영합니다.";
-        echo "<span class=\"badge badge-light\">$id 님 안녕하세요~!</span>";
+        echo "<span class=\"badge badge-light\">$id 님 안녕하세요~!</span><br>";
         echo "<form action=\"../header/logout.php\" method=\"post\">
         <input class=\"btn btn-danger\" type=\"submit\" name=\"submit\" value=\"로그아웃\">
         </form>";
         ?>
-        
-        <button type="button" onclick="location.href='../page/mypage.php' ">마이페이지</button>
+        <div class="ml-2">
+          <button type="button" class="btn btn-danger" onclick="location.href='../page/mypage.php' ">Mypage</button>
+        </div>
       <?php }  ?>
       </div>
 

@@ -1,6 +1,9 @@
 <?php
   include "../common/db.php";
-  include "./review/lib/get_array_user.php";
+  // include "./review/lib/get_array_user.php";
+  include "./review/lib/get_class.php";
+  
+  $get = new get;
   if(!isset($_SESSION['id'])){
     echo "<script>alert('로그인해야지만 이용할 수 있는 서비스입니다.'); location.href='../login/login.php';</script>";
   }
@@ -44,10 +47,10 @@
   <button type="button" class="list-group-item list-group-item-action active" onclick="location.href='./mypage.php' ">
     마이페이지
   </button>
-  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=1' ">회원탈퇴</button>
-  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=2' ">즐겨찾기 글목록</button>
-  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=3' ">내가 쓴 글목록</button>
-  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=4' ">Vestibulum at eros</button>
+  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=1' ">즐겨찾기 글목록</button>
+  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=2' ">내가 쓴 글목록</button>
+  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=3' ">회원탈퇴</button>
+  <button type="button" class="list-group-item list-group-item-action" onclick="location.href='./mypage.php?page=4' ">준비중</button>
 </div>
   
 <?php
@@ -57,7 +60,7 @@ if(!isset($_GET['page'])){
   //회원의 개인정보들을 보여주기위해서 db에서 호출
   $sql = mq("select * from members where id = '".$_SESSION['id']."'");
   $result = $sql -> fetch_array();
-  $fillarray = get_array_user($result);
+  $fillarray = $get -> get_array_user($result);
   //항목마다 테이블을 만들면 코딩이 너무 길어져서  반복문을 사용하기 위해서 배열에 넣었다.
   $user_field = ['사용자 이름','생일','성별','계정 이메일'];
   $user_content = ['name','birthday','gender','email']; ?>
@@ -103,7 +106,7 @@ if(!isset($_GET['page'])){
 
 <?php } 
   // 회원탈퇴를 눌렀을 경우의 페이지  
-  else if($_GET['page']==1){ ?>
+  else if($_GET['page']==3){ ?>
   <div class="user_drop">
     <form action="../login/check/user_drop.php" method="post">
       <div class="drop_title">
@@ -118,7 +121,7 @@ if(!isset($_GET['page'])){
 
 <?php }
   //자신이 즐겨찾기를 누른 게시글들을 볼 수 있는 페이지 
-  else if($_GET['page']==2){?>
+  else if($_GET['page']==1){?>
   <div class="">
     <?php
     // 현재 사용자의 즐겨찾기 목록을 가져오기 위해서 bookmark table과 members table을 조인해서 db를 가져온다
@@ -148,7 +151,7 @@ if(!isset($_GET['page'])){
   </div>
 <?php }
   //자신이 게시한 글을 볼 수 있는 페이지
-  else if($_GET['page']==3){?>
+  else if($_GET['page']==2){?>
    <div class="">
     <?php
     // 사용자의 id로 작성되어있는 모든 글을 가져온다 .
