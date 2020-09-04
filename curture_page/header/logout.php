@@ -14,7 +14,7 @@ include "log_head.php";
          session_start();
          session_unset(); // 세션제거
          session_destroy(); // 세션삭제
-          echo "<script>alert('로그아웃'); location.href='../home/index.php';</script>";
+          echo "<script>alert('로그아웃'); location.href='http://localhost/curture_page/indes.php';</script>";
         }
       ?>
 </body>

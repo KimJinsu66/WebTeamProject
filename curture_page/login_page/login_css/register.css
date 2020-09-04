@@ -1,0 +1,48 @@
+
+    .h1_box {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .register_container{
+      margin: 0 auto;
+      max-width: 768px;
+      min-width: 540px;
+    }
+
+    .register_box {
+      width: 460px;
+      margin-left: 75px;
+
+    }
+
+    input {
+      width: 600px;
+      height: 50px;
+    }
+
+    select {
+      width: 608px;
+      height: 60px;
+      font-size: 18px;
+    }
+
+    .birthday_text {
+      width: 600px;
+      height: 55px;
+    }
+
+    h3 {
+      text-align: left;
+      font-size: 20px;
+    }
+
+    .register_button {
+      width:600px;
+      height:50px;
+      background:#e5236d;
+      border: none;
+      margin-top: 50px;
+      color: white;
+      font-size: 17px;
+    }

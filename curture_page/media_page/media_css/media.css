@@ -1,0 +1,212 @@
+.container {
+	width: 1200px;
+} 
+
+nav {
+	background-color: #4ea1d3
+}
+
+nav .nav-link {
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: bold;
+}
+
+nav .nav-link:hover {
+	background-color: #f0f0f0;
+}
+
+nav div .country{
+	font-size: 16px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: bold;
+}
+
+/* 점보트론 */
+.jbcontainer {
+	text-align: center;
+	width: 1vm;
+	height: 500px;
+}
+
+.jumbotron {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+}
+
+.jumbotron{
+	background-image: url('../imgs/[크기변환]pic5.jpg');
+	background-size: cover;
+	color:white;
+	height: 100%;
+}
+
+
+
+/* filter */
+
+ul.filters{
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 30px 0;
+}
+
+ul.filters > li{
+	list-style: none;
+	display: inline-block;
+}
+
+ul.filters > li > a{
+	display: block;
+	color: #434e5e;
+	text-decoration: none;
+	padding: 5px 20px;
+}
+
+ul.filters > li > a:hover{
+	background-color: #e6e9ed;
+}
+
+ul.filters > li.active > a{
+	color: #fff;
+	background-color: #28bea8;
+}
+
+	.card{
+		position: relative;
+		margin-bottom: 50px;
+		color: #000;
+		border-radius: 0;
+		border: 1px solid #eee;
+		background-color: #fff;
+		box-shadow: 1px 1px 1.5px rgba(0,0,0,0.075);
+	}
+
+	.card-head{
+		position: relative;
+		width: 100%;
+		height: 19vw;
+		object-fit: cover;
+	}
+
+	.card-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9;
+		/* background-color: rgba(67,78,94,0.8); */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color :#fff;
+		-webkit-transition: ease-in-out 0.2s;
+		-moz-transition: ease-in-out 0.2s;
+		-ms-transition: ease-in-out 0.2s;
+		transition: ease-in-out 0.2s;
+	}
+
+.card-hover{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(40,190,168,0.9);
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 30px;
+	-webkit-transition: ease-in-out 0.2s;
+	-moz-transition: ease-in-out 0.2s;
+	-ms-transition: ease-in-out 0.2s;
+	transition: ease-in-out 0.2s;
+}
+
+.card-body{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+h4.title{
+	color: #434e5e;
+	font-size: 1.2rem;
+	margin-bottom: 0;
+}
+
+.card-btn{
+	margin-bottom: -40px;
+	font-size: 0.9rem;
+	background-color: #fff;
+	color: #222;
+	border: 1px solid #eee;
+	border-radius: 0;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.card-btn:hover{
+	background-color: #28bea8;
+	color: #fff;
+}
+
+footer{
+	background-color:white;
+    padding: 60px 0px;
+}
+
+footer ul{
+    list-style:none;
+    margin:0 auto;
+    display:inline-block;
+    padding-top:50px;
+}
+
+footer ul li{
+    float:left;
+}
+
+footer ul li a{
+	color:#b1aca1;
+    padding:20px;
+}
+
+footer ul li a:hover{
+	color:#7dabdb;
+	text-decoration:none;
+}
+
+.footer-top{
+	padding-bottom:50px;
+}
+
+.footer-top .fa{
+    font-size:18px;
+    color: #FFF;
+    padding-right:10px;
+}
+
+.footer-top a{
+    color:#FFF;
+    text-decoration:none;
+}
+
+.footer-top .col-lg-2:hover .fa , .footer-top .col-lg-2:hover a{
+    color:#7dabdb;
+}
+
+.copyright{
+    background-color:#f0f0f0;
+}
+
+.copyright p{
+	font-size:12px;
+	padding:15px 0 10px 0;
+}
