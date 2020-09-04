@@ -1,3 +1,9 @@
+<?php
+    include "../common/db.php";
+    if(!isset($_SESSION['id'])){
+    echo "<script>alert('로그인을 해야 이용할 수 있는 서비스입니다.'); location.href='../login_page/login.php';</script>";
+    }
+?>
 <!DOCTYPE html>
 <html >
 <head>

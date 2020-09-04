@@ -1,3 +1,9 @@
+<?php
+    include "../common/db.php";
+    if(isset($_SESSION['id'])){
+    echo "<script>alert('로그인 되었습니다.'); location.href='../indes.php';</script>";
+    }
+?>
 <!DOCTYPE html>
 <html>
   <head>
