@@ -12,19 +12,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>일본페이지</title>
-  <!-- 페비콘 가져오기 -->
-  <link rel="icon" type="titleImg" href="../home/imgs/favicon.png">
+
   <link rel="stylesheet" href="review_css/mainTextAndreviewLayout.css">
 
   <link rel="stylesheet" href="review_css/curture_main.css">
-
-  <!-- 폰트 어썸 백터 아이콘 가져오기 -->
-  <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous">
-  </script>
- 
-  <!-- 구글 폰트 가져오기 -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
   <!-- revew_read_page css -->
   <link rel="stylesheet" href="review_css/review_read.css">
   <!--고정 headere-->
@@ -41,16 +32,16 @@
   </script>
 </head>
 <body>
-<div class="button_container">
+  <div class="button_container">
   <?php
-      // 현재 최상위 review_no 를 가져온다 
-      // 만약 현재 읽고있는 게시글이 가장 최신글이라면 다음글이 없으니까 현재글 = 최신글 이냐 아니냐 조건을 주기위해서 
-      // 그리고 가장 오래된 글 (제일 처음 작성된 글)에서는 이전글이 존재하지 않으니까 그 조건을 줘야한다.
-      $sql = mq("select review_no from review order by review_no desc");
-      $result = $sql -> fetch_array();
-      //현재글이 최신글이 아니고 가장 처음글이 아닐경우  ->  다음글 o / 이전글 o
-      if($result['review_no'] > $_GET['review_no'] && $_GET['review_no'] > 1){
-    ?>
+    // 현재 최상위 review_no 를 가져온다 
+    // 만약 현재 읽고있는 게시글이 가장 최신글이라면 다음글이 없으니까 현재글 = 최신글 이냐 아니냐 조건을 주기위해서 
+    // 그리고 가장 오래된 글 (제일 처음 작성된 글)에서는 이전글이 존재하지 않으니까 그 조건을 줘야한다.
+    $sql = mq("select review_no from review order by review_no desc");
+    $result = $sql -> fetch_array();
+    //현재글이 최신글이 아니고 가장 처음글이 아닐경우  ->  다음글 o / 이전글 o
+    if($result['review_no'] > $_GET['review_no'] && $_GET['review_no'] > 1){
+  ?>
     <div class="">
       <a href="./review_read.php?review_no=<?=$_GET['review_no']+1?>">▲ 다음글</a>
     </div>
@@ -58,18 +49,20 @@
         <a href="./review_read.php?review_no=<?=$_GET['review_no']-1?>">▼ 이전글</a>
       </div>
     <?php } 
+
     // 햔재보는 글이 최신글이라면 -> 다음글 x 이전글 o 
     if($result['review_no'] <= $_GET['review_no']){ ?>
       <div class="">
         <a href="./review_read.php?review_no=<?=$_GET['review_no']-1?>">▼  이전글</a>
       </div>
-      <?php } 
-      // 햔재보는 글이 최초(처음)글 이라면 -> 다음글 o 이전글 x
-      if($_GET['review_no'] == 1){ ?>
+    <?php } 
+
+    // 햔재보는 글이 최초(처음)글 이라면 -> 다음글 o 이전글 x
+    if($_GET['review_no'] == 1){ ?>
       <div class="">
         <a href="./review_read.php?review_no=<?=$_GET['review_no']+1?>">▲ 다음글</a>
       </div>
-      <?php } ?>
+    <?php } ?>
     <div class="">
       <a href="./review_page.php?page=1">목록</a>
     </div>

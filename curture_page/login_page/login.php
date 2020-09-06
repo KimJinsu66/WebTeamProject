@@ -1,20 +1,17 @@
+<?php
+    include "../common/db.php";
+    if(isset($_SESSION['id'])){
+    echo "<script>alert('로그인 되었습니다.'); location.href='../indes.php';</script>";
+    }
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>로그인</title>
-  <!-- 공용 스타일 -->
-  <!-- 구글 폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-  rel="stylesheet">
-  <!-- 페비콘 가져오기 -->
-  <link rel="icon" type="image/png" href="http://localhost/curture_page/common/common_imgs/favicon.png">
-  <!-- 폰트어썸 아이콘 가져오기 -->
-  <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous"></script>
-  <!-- 공용 스타일 -->
-
     <!-- 로그인 CSS 스타일 가져오기 -->
     <link rel="stylesheet" href="login_css/login.css" />
+    <!-- 헤더 -->
     <?php include "../header/header.php"?>
   </head>
   <body>

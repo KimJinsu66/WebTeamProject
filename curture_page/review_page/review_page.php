@@ -13,17 +13,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>일본페이지</title>
-
-  <!-- 공용 스타일 -->
-  <!-- 구글 폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-  rel="stylesheet">
-  <!-- 페비콘 가져오기 -->
-  <link rel="icon" type="image/png" href="http://localhost/curture_page/common/common_imgs/favicon.png">
-  <!-- 폰트어썸 아이콘 가져오기 -->
-  <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous"></script>
-  <!-- 공용 스타일 -->
-  
   <!-- CSS 스타일 -->
   <link rel="stylesheet" href="review_css/curture_main.css">
   <link rel="stylesheet" href="review_css/mainTextAndreviewLayout.css">
@@ -108,16 +97,20 @@
         // 변수 page값에 따른 LIMIT의 첫번째 값 계산
         $sql = mq("SELECT * FROM review ORDER BY review_no DESC LIMIT {$firstLimitValue}, {$numView}");        
         $num = 2;
-      } 
+      } ?>
+      <div class="review">
+        <?=$get -> get_content_title();?>
+      </div>
+      <?php
       $low = $sql -> num_rows;
       for($i=1; $i<=$low; $i++){
         $result =$sql -> fetch_array();      
         //result5에 fetch_array된 필드와 데이타들을 fillarray에 각 필드명별로 인덱스를 만들어서 데이터를 저장시키는 함수
         $fillarray = $get -> get_array_review($result); ?>
+      <div class="review">
         <!--게시판에 장르/제목/작성자/시간/조회수등을 표시해주는 함수 -->
-        <div class="review">
-            <?php echo $get -> get_content($fillarray); ?>   
-        </div>
+        <?php echo $get -> get_content($fillarray); ?>
+      </div>
     <?php }
         $numPage = make_paging_number($num,$search_title,"","");
       ?>        
@@ -163,7 +156,7 @@
       ?>        
       <div id="paging">
       <?php for($i=0; $i<$numPage; $i++){ ?> 
-        <a href="review_page.php?page=<?=($i+1)?>"><?=($i+1)?></a>
+        <a href="review_page.php?genre=<?=$_GET['genre']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
       <?php }?></div>
       <?php }
 
@@ -203,7 +196,7 @@
         ?>        
         <div id="paging">
         <?php for($i=0; $i<$numPage; $i++){ ?> 
-          <a href="review_page.php?page=<?=($i+1)?>"><?=($i+1)?></a>
+          <a href="review_page.php?&kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
         <?php }?></div>
       <?php }
 
@@ -245,7 +238,7 @@
         ?>        
         <div id="paging">
         <?php for($i=0; $i<$numPage; $i++){ ?> 
-          <a href="review_page.php?page=<?=($i+1)?>"><?=($i+1)?></a>
+          <a href="review_page.php?genre=<?=$_GET['genre']?>&kategorie=<?=$_GET['kategorie']?>&page=<?=($i+1)?>"><?=($i+1)?></a>
         <?php }?></div>
         <?php
 

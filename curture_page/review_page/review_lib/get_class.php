@@ -68,6 +68,40 @@
       
           return $string;
     }
+
+    function get_content_title(){
+
+      $string =
+          "<div class=\"review_review_no\" style=\"width:50px\">
+          no.
+          </div>
+          <div class=\"review_country\" style=\"width:50px\">
+          country
+          </div>
+          <div class=\"review_genre\" style=\"width:100px\">
+          genre
+          </div>
+          <div class=\"review_kategorie\" style=\"width:50px\">
+          kategorie
+          </div>
+          <div class=\"genre_title\" style=\"width:200px\">
+          genre_title
+          </div>
+          <div class=\"review_title\" style=\"width:350px\">       
+          title
+          </div>
+          <div class=\"review_user\" style=\"width:100px\">
+          id
+          </div>
+          <div class=\"review_date\" style=\"width:200px\">
+          review_date
+          </div>
+          <div class=\"view_count\" style=\"width:50px\">
+          view_count
+          </div>";
+      
+          return $string;
+    }
     
     // 댓글 작성 기능 부분을 함수화 시킴
     function get_commentWrite($mem_no, $comment){

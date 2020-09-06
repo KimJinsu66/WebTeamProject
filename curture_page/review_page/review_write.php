@@ -1,20 +1,14 @@
+<?php
+    include "../common/db.php";
+    if(!isset($_SESSION['id'])){
+    echo "<script>alert('로그인을 해야 이용할 수 있는 서비스입니다.'); location.href='../login_page/login.php';</script>";
+    }
+?>
 <!DOCTYPE html>
 <html >
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <!-- 페비콘 가져오기 -->
-  <link rel="icon" type="image/png" href="../../home/imgs/favicon.png">
-
-  <!-- 폰트 어썸 백터 아이콘 가져오기 -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-  crossorigin="anonymous" />
-
-  <!-- 구글 폰트 가져오기 -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <title>게시글 읽기</title>
   <!-- CSS 스타일 가져오기 -->
   <link rel="stylesheet" href="./review_css/style.css">
   <link rel="stylesheet" href="./review_css/review_write.css">
