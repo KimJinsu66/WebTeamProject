@@ -12,19 +12,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>일본페이지</title>
-  <!-- 페비콘 가져오기 -->
-  <link rel="icon" type="titleImg" href="../home/imgs/favicon.png">
+
   <link rel="stylesheet" href="review_css/mainTextAndreviewLayout.css">
 
   <link rel="stylesheet" href="review_css/curture_main.css">
-
-  <!-- 폰트 어썸 백터 아이콘 가져오기 -->
-  <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous">
-  </script>
- 
-  <!-- 구글 폰트 가져오기 -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
   <!-- revew_read_page css -->
   <link rel="stylesheet" href="review_css/review_read.css">
   <!--고정 headere-->
