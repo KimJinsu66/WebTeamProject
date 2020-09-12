@@ -71,7 +71,7 @@
       <ul class="navbar-nav text-center">
         <li class="nav-item mr-5 dropdown">
           <a class="nav-link dropdown-toggle px-0 py-0" href="#" data-toggle="dropdown">
-            작품정보
+            作品情報
           </a>
           <ul class="dropdown-menu country" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="http://localhost/curture_page/media_page/korea_media.php">
@@ -87,19 +87,19 @@
           </ul>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link px-0 py-0" href="#">자유게시판</a>
+          <a class="nav-link px-0 py-0" href="#">フリー掲示板</a>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link px-0 py-0" href="http://localhost/curture_page/review_page/review_page.php">리뷰게시판</a>
+          <a class="nav-link px-0 py-0" href="http://localhost/curture_page/review_page/review_page.php">レビュー</a>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link px-0 py-0" href="#">공지사항</a>
+          <a class="nav-link px-0 py-0" href="#">知らせ事項</a>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link px-0 py-0" href="#">고객센터</a>
+          <a class="nav-link px-0 py-0" href="#">カスタマーセンター</a>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link px-0 py-0" href="#">이용안내</a>
+          <a class="nav-link px-0 py-0" href="#">利用案内</a>
         </li>
       </ul>
     </div>

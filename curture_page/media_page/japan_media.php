@@ -7,7 +7,12 @@
 	<title>엔터트립</title>
    
 	<!-- 헤더 CSS -->
-	<link rel="stylesheet" href="./media_css/media.css">
+    <link rel="stylesheet" href="./media_css/media.css">
+    <style>
+        .search_button_box{
+            margin-top:0;
+        }
+    </style>
 </head>
 <body>
   <!-- 헤더 -->
@@ -26,14 +31,17 @@
       <div class="col-lg-12">
           <ul class="filters text-center">
               <li class="active" data-filter="*"><a href="#!">All</a></li>
-              <li data-filter=".movie"><a href="#!">영화</a></li>
-              <li data-filter=".drama"><a href="#!">드라마</a></li>
-              <li data-filter=".variety"><a href="#!">예능</a></li>
-              <li data-filter=".anime"><a href="#!">애니메이션</a></li>
+              <li data-filter=".movie"><a href="#!">映画</a></li>
+              <li data-filter=".drama"><a href="#!">ドラマ</a></li>
+              <li data-filter=".variety"><a href="#!">芸能</a></li>
+              <li data-filter=".anime"><a href="#!">アニメーション</a></li>
           </ul>
           <div class="col-sm-12 mb-3">
             <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()"
-            placeholder="작품 이름을 검색해주세요">
+            placeholder="作品を検索してください">
+          </div>
+          <div class="search_button_box">
+              <a type="button" href="../review_page/review_write.php" target="_top" class="btn btn-primary">글쓰기</a>
           </div>
           <div class="projects">
               <div class="row">
@@ -44,7 +52,7 @@
                               alt="그 시절 우리가 좋아했던 소녀" class="img-fluid card-img"></a>
                           </div>
                           <div class="card-body text-center">
-                            <a href="#"><h4 class="title">그 시절 우리가 좋아했던 소녀</h4></a>
+                            <a href="#"><h4 class="title">あの頃君を追いかけた ネタバレ</h4></a>
                               <h4 class="title">(2018)</h4>
                               </a>
                           </div>
@@ -57,7 +65,8 @@
                               alt="도망치는건 부끄럽지만 도움이 된다" class="img-fluid card-img">
                           </div>
                           <div class="card-body text-center">
-                              <h4 class="title">도망치는건 부끄럽지만 도움이 된다</h4>
+                              <h4 class="title">
+                                逃げるは恥だが役に立つ</h4>
                               <h4 class="title">(2016)</h4>
                           </div>
                       </div>
@@ -69,7 +78,7 @@
                               alt="한자와 나오키" class="img-fluid card-img">
                           </div>
                           <div class="card-body text-center">
-                              <h4 class="title">한자와 나오키</h4>
+                              <h4 class="title">半沢直樹</h4>
                               <h4 class="title">(2013)</h4>
                           </div>
                       </div>
@@ -81,7 +90,7 @@
                               alt="너의 이름은" class="img-fluid card-img">
                           </div>
                           <div class="card-body text-center">
-                              <h4 class="title">너의 이름은</h4>
+                              <h4 class="title">君の名前</h4>
                               <h4 class="title">(2016)</h4>
                           </div>
                       </div>
@@ -93,7 +102,7 @@
                               alt="목소리의 형태" class="img-fluid card-img">
                           </div>
                           <div class="card-body text-center">
-                              <h4 class="title">목소리의 형태</h4>
+                              <h4 class="title">聲の形</h4>
                               <h4 class="title">(2016)</h4>
                           </div>
                       </div>
@@ -105,7 +114,7 @@
                               alt="아사히나구" class="img-fluid card-img">
                           </div>
                           <div class="card-body text-center">
-                              <h4 class="title">아사히나구</h4>
+                              <h4 class="title">あさひなぐ</h4>
                               <h4 class="title">(2017)</h4>
                           </div>
                       </div>
@@ -117,7 +126,7 @@
                             alt="고독한미식가 7" class="img-fluid card-img">
                         </div>
                         <div class="card-body text-center">
-                            <h4 class="title">고독한미식가 시즌7</h4>
+                            <h4 class="title">孤独のグルメシーズン7</h4>
                             <h4 class="title">(2018)</h4>
                         </div>
                     </div>
@@ -129,7 +138,7 @@
                           alt="러브레터" class="img-fluid card-img">
                       </div>
                       <div class="card-body text-center">
-                          <h4 class="title">러브레터</h4>
+                          <h4 class="title">ラブレター</h4>
                           <h4 class="title">(1995)</h4>
                       </div>
                   </div>

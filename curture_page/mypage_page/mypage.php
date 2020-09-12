@@ -5,7 +5,7 @@
   
   $get = new get;
   if(!isset($_SESSION['id'])){
-    echo "<script>alert('로그인해야지만 이용할 수 있는 서비스입니다.'); location.href='../login/login.php';</script>";
+    echo "<script>alert('로그인해야지만 이용할 수 있는 서비스입니다.'); location.href='../login_page/login.php';</script>";
   }
 ?>
 <!DOCTYPE html>
@@ -24,16 +24,16 @@
   <div class="list-group">
   <button type="button" class="list-group-item list-group-item-action active" 
   onclick="location.href='./mypage.php' ">
-    마이페이지
+  マイページ
   </button>
   <button type="button" class="list-group-item list-group-item-action" 
-  onclick="location.href='./mypage.php?page=1' ">즐겨찾기 글목록</button>
+  onclick="location.href='./mypage.php?page=1' ">保存したレビュー</button>
   <button type="button" class="list-group-item list-group-item-action" 
-  onclick="location.href='./mypage.php?page=2' ">내가 쓴 글목록</button>
+  onclick="location.href='./mypage.php?page=2' ">自分が書いたレビュー</button>
   <button type="button" class="list-group-item list-group-item-action" 
-  onclick="location.href='./mypage.php?page=3' ">회원탈퇴</button>
-  <button type="button" class="list-group-item list-group-item-action" 
-  onclick="location.href='./mypage.php?page=4' ">준비중</button>
+  onclick="location.href='./mypage.php?page=3' ">メンバー脱退</button>
+  <!-- <button type="button" class="list-group-item list-group-item-action" 
+  onclick="location.href='./mypage.php?page=4' ">준비중</button> -->
 </div>
   <?php
   //각 항목마다 url에 page 번호를 매겨서 현재 페이지에서 url에 따라서 내용물만 변하게 하기위해서 조건을 각각 주었습니다.
