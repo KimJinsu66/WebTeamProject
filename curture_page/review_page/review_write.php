@@ -33,32 +33,32 @@
     <div class="option_box">
       <div class="select_box">
         <select name="select_country">
-          <option value="" selected="">나라</option>
-          <option value="한국"">한국</option>
-          <option value="일본">일본</option>
-          <option value="미국">미국</optioon>
-          <option value="기타">기타</optioon>
+          <option value="" selected="">国</option>
+          <option value="한국"">日本</option>
+          <option value="일본">韓国</option>
+          <option value="미국">アメリカ</optioon>
+          <option value="기타">中国</optioon>
         </select>
         <select name="select_genre">
-          <option value="" selected="">장르</option>
-          <option value="영화">영화</option>
-          <option value="드라마">드라마</option>
-          <option value="애니메이션">애니메이션</optioon>
-          <option value="예능">예능</optioon>
+          <option value="" selected="">タイプ</option>
+          <option value="영화">映画</option>
+          <option value="드라마">ドラマ</option>
+          <option value="애니메이션">アニメイシヨン</optioon>
+          <option value="예능">芸能</optioon>
         </select>
         <select name="select_kategorie">
-          <option value="" selected="">카테고리</option>
-          <option value="음식">음식</option>
-          <option value="장소">장소</option>
-          <option value="놀거리">놀거리</optioon>
+          <option value="" selected="">カテゴリー</option>
+          <option value="음식">食べ物</option>
+          <option value="장소">場所</option>
+          <option value="놀거리">遊び物</optioon>
         </select>
         
         <input list="browsers" name="genre_title" id="browser" placeholder="선택or검색">
           <datalist id="browsers" name="genre_title">
-            <option value="백종원의골목식당">
-            <option value="고독한미식가">
-            <option value="무한도전">
-            <option value="너의이름은">
+            <option value="あの頃君を追いかけた ネタバレ">
+            <option value="逃げるは恥だが役に立つ">
+            <option value="半沢直樹">
+            <option value="君の名前">
             <option value="한것도없는데벌써3시">
             <option value="망했다">
           </datalist>
@@ -80,11 +80,11 @@
 
     <!--title-->
     <div class="title_box">
-      <textarea class="textarea_title" name="title" placeholder="제목을 입력하세요" style="height: 42px;"></textarea>
+      <textarea class="textarea_title" name="title" placeholder="タイトルを入力してください" style="height: 42px;"></textarea>
     </div>
     <!--text-area-->
     <div class="description_container">
-      <textarea name="description" class="textarea_description" placeholder="500자 이내로 적어주세요"></textarea>
+      <textarea name="description" class="textarea_description" placeholder="500文字以内で入力してください"></textarea>
     </div>
     </div>
   </form>

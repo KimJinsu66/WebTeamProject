@@ -10,7 +10,10 @@
 
   $get = new get;
 ?>
+<!DOCTYPE html>
+<html >
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>일본페이지</title>
   <!-- CSS 스타일 -->
@@ -41,7 +44,7 @@
 
 <div class="main-container">
   <div class="dropdown">
-    <button class="dropbtn">카테고리선택</button>
+    <button class="dropbtn">カテゴリー</button>
     <div class="dropdown-content">
       <?php if(isset($_GET['genre'])){ ?>
       <a href="review_page.php?genre=<?=$_GET['genre']?>&kategorie=음식&page=1">음식</a>
@@ -247,5 +250,4 @@
     </div>
     </div>
     <?php include "../footer/footer.php"?>
-  </body>
 </html>

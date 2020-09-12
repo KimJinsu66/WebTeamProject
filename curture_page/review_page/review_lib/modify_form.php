@@ -19,7 +19,7 @@ if($fillarray['file'] == ""){
     </div>
   </div>
   <div class=\"review_title\" style=\"display:flex; font-size:3em\">
-    제목 <input type=\"text\" name=\"title\" value=\"".$fillarray['title']."\">
+  タイトル <input type=\"text\" name=\"title\" value=\"".$fillarray['title']."\">
   
   </div>
   <div class=\"review_user_container\" style=\"display:flex\">
@@ -27,7 +27,7 @@ if($fillarray['file'] == ""){
     ".$fillarray['id']."
     </div>
     <div class=\"review_user_rank\">
-    등급 : 신
+    ランク : 一般
     </div>
   </div>
   <div class=\"review_date_count_container\" style=\"display:flex; margin-bottom:30px; border-bottom:1px solid black;\">
@@ -35,7 +35,7 @@ if($fillarray['file'] == ""){
      ".$fillarray['review_date']."
      </div>
      <div class=\"review_count\">
-     조회 ".$fillarray['view_count']."
+     view_count ".$fillarray['view_count']."
      </div>
   </div>
   <div class=\"review_description\" style=\"font-size:1.5em\">
@@ -64,7 +64,7 @@ $string =
       </div>
     </div>
     <div class=\"review_title\" style=\"display:flex; font-size:3em\">
-      제목 <input type=\"text\" name=\"title\" value=\"".$fillarray['title']."\">
+      タイトル <input type=\"text\" name=\"title\" value=\"".$fillarray['title']."\">
     
     </div>
     <div class=\"review_user_container\" style=\"display:flex\">
@@ -72,7 +72,7 @@ $string =
       ".$fillarray['id']."
       </div>
       <div class=\"review_user_rank\">
-      등급 : 신
+      ランク : 一般
       </div>
     </div>
     <div class=\"review_date_count_container\" style=\"display:flex; margin-bottom:30px; border-bottom:1px solid black;\">
@@ -80,7 +80,7 @@ $string =
        ".$fillarray['review_date']."
        </div>
        <div class=\"review_count\">
-       조회 ".$fillarray['view_count']."
+       view_count ".$fillarray['view_count']."
        </div>
     </div>
     <div class=\"review_file\">

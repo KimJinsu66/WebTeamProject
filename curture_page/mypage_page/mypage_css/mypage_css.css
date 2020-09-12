@@ -24,6 +24,7 @@
 .bookmark_list,
 .myReview_list {
   margin-top: 40px;
+  width: 800px;
 }
 .user_drop {
   margin: 0 auto;
