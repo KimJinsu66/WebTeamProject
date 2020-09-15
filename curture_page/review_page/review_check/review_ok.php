@@ -49,7 +49,7 @@
   $sql5 = mq("ALTER TABLE review AUTO_INCREMENT = {$next_no}");
 
   //사진을 넣었을 경우와 안넣었을 경우 따로 따로 되도록 해놨음
-  if($filename != null){
+  if($_FILES['file']['type'] != ""){
     $sql2 = mq("insert into review(id, title, description, file, memberNum, genre, kategorie, review_date, genre_title, country)
               values('".$_SESSION['id']."', '".$total_title."', '".$description."', '".$filename."', '".$member_no['mem_no']."', '".$genre."',
               '".$kategorie."',now(),'".$genre_title."', '".$country."')");  

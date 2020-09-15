@@ -93,13 +93,13 @@
           <a class="nav-link px-0 py-0" href="http://localhost/curture_page/review_page/review_page.php">レビュー</a>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link px-0 py-0" href="#">知らせ事項</a>
+        <a class="nav-link px-0 py-0" href="http://localhost/curture_page/pointshop_page/pointShop.php">POINTSHOP</a>
         </li>
         <li class="nav-item mr-5">
           <a class="nav-link px-0 py-0" href="#">カスタマーセンター</a>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link px-0 py-0" href="#">利用案内</a>
+          <a class="nav-link px-0 py-0" href="http://localhost/curture_page/guide_page/guide.php">利用案内</a>
         </li>
       </ul>
     </div>

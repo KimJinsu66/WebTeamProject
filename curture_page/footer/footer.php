@@ -1,78 +1,59 @@
-<head>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<!-- 부트스트랩 CSS -->
+<link rel="stylesheet" href="http://localhost/curture_page/common/common_css/bootstrap.min.css">
 
-  <!-- 공용 스타일 -->
-  <!-- 구글 폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet">
-  <!-- 페비콘 가져오기 -->
-  <link rel="icon" type="image/png" href="http://localhost/curture_page/common/common_imgs/favicon.png">
-  <!-- 폰트어썸 아이콘 가져오기 -->
-  <script src="https://kit.fontawesome.com/08acca0d45.js" crossorigin="anonymous"></script>
-  <!-- 공용 스타일 -->
+<!-- 부트스트랩 JS -->
+<script src="http://localhost/curture_page/common/common_js/bootstrap.min.js"></script>
+<!-- 푸터 CSS -->
+<link rel="stylesheet" href="http://localhost/curture_page/footer/footer_css/style.css">
 
-  <!-- 부트스트랩 CSS -->
-  <link rel="stylesheet" href="http://localhost/curture_page/common/common_css/bootstrap.min.css">
-
-  <!-- 부트스트랩 JS -->
-  <script src="http://localhost/curture_page/common/common_js/bootstrap.min.js"></script>
-  <!-- 푸터 CSS -->
-  <link rel="stylesheet" href="http://localhost/curture_page/footer/footer_css/footer.css">
-</head>
-
-
-<footer>
-  <div class="footer" id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <h4> 엔터트립 </h4>
+<div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+  <footer>
+    <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
+      <div class="col-12">
+        <div class="row row-2">
+          <div class="col-sm-3 text-md-center">
+            <h5><span></span><b> 엔터트립</b></h5>
+            <h6> 미디어 성지순례</h6>
+          </div>
+          <div class="col-sm-3 my-sm-0 mt-5">
+            <ul class="list-unstyled">
+              <li class="mt-0">사이트 도움말</li>
+              <li>사이트 이용약관</li>
+              <li>사이트 운영규칙</li>
+              <li>사이트 공지사항</li>
+            </ul>
+          </div>
+          <div class="col-sm-3 my-sm-0 mt-5">
+            <ul class="list-unstyled">
+              <li class="mt-0">개인정보 취급방침</li>
+              <li>책임의 한계와 법적고지</li>
+              <li>게시중단요청 서비스</li>
+              <li>고객센터</li>
+            </ul>
+          </div>
+          <div class="col-sm-3 my-sm-0 mt-5">
+            <ul class="list-unstyled">
+              <li class="mt-0">김진수 <i class="fab fa-github"></i></li>
+              <li>오종화 <i class="fab fa-github"></i></li>
+              <li>최종인 <i class="fab fa-github"></i></li>
+              <li>하승수 <i class="fab fa-github"></i></li>
+            </ul>
+          </div>
         </div>
-        <div class="col-lg-3 col-sm-2 col-xs-3">
-          <h3> Contact </h3>
-          <ul>
-            <li><a class="email" href="#"> insert email here </a></li>
-            <br />
-            <li>
-              <p> address line one </p>
-            </li>
-            <li>
-              <p> address line two </p>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-sm-2 col-xs-3">
-          <ul>
-            <li>
-              <h5> <a href="#" style="margin-top: 5em"> ABOUT US</a>
-                <h5>
-            </li>
-            <li>
-              <h5><a href="#"> CURRENT SERIES </a>
-                <h5>
-            </li>
-            <li>
-              <h5><a href="#"> THE HOUSE </a>
-                <h5>
-            </li>
-            <li>
-              <h5><a href="#"> LOOKING BACK </a>
-                <h5>
-            </li>
-          </ul>
-        </div>
-
-        <!--/.row-->
-      </div>
-      <!--/.container-->
-    </div>
-    <!--/.footer-->
-
-    <div class="footer-bottom">
-      <div class="container">
-        <p class="pull-left copyright"> Copyright © Footer 2014. All right reserved. </p>
-
       </div>
     </div>
-    <!--/.footer-bottom-->
-
-</footer>
+    <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
+      <div class="col-12">
+        <div class="row my-4 row-1 no-gutters">
+          <div class="col-sm-3 col-auto text-center"><small>Copyright © 청해진5기 All Right Reserved</small></div>
+          <div class="col-md-3 col-auto "></div>
+          <div class="col-md-3 col-auto"></div>
+          <div class="col my-auto text-md-left text-right "> <small> EnterTrip SNS <span><img
+                  src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span> <span><img
+                  src="https://i.imgur.com/N90KDYM.png" class="img-fluid " width="25"></span></small> </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -1,8 +1,10 @@
+<!doctype html>
 <head>
  
   <!-- CSS 스타일 -->
-  <link rel="stylesheet" href="./main_css/main.css">
-</head>
+	<link rel="stylesheet" href="http://localhost/curture_page/main_page/main_css/main.css">
+	<link rel="stylesheet" href="http://localhost/curture_page/main_page/main_css/country.css">
+</head>	
 <!-- 배너 -->
 	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center  jt">
 		<div class="col-md-12 mx-auto ">
@@ -54,8 +56,10 @@
   <!--/.Controls-->
 </div>
 <!--/.Carousel Wrapper-->
+<div class="mt-5">
 			<h1 class="display-5 font-weight-normal">화면에서만 보던 장소를 찾아 떠나는 여행</h1>
-			<p class="lead font-weight-normal">엔터트립은 영화, 드라마, 예능, 애니메이션의 촬영장소를 찾아 볼 수 있는 곳입니다.</p>
+			<p class="lead font-weight-normal">엔터트립은 영화, 드라마, 예능, 애니메이션의 촬영장소를 찾아 볼 수 있는 곳입니다</p>
+</div>
 		</div>
 	</div>
 	 <!-- 메인 -->
@@ -199,81 +203,89 @@
 					</div>
 				</div>
 			</div>
-			<!-- 장르 -->
-			<div class="container">
-				<h2 class="text-center">다양한 장르</h2>
-				<div class="row row-cols-1 row-cols-md-4">
-					<div class="col mb-4">
-						<div class="card h-100">
-							<img src="main_imgs/movie.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">영화</h5>
-								<p class="card-text">최종인 바보</p>
-							</div>
-						</div>
-					</div>
-					<div class="col mb-4">
-						<div class="card h-100">
-							<img src="imgs/각키쨩.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">드라마</h5>
-								<p class="card-text">최종인</p>
-							</div>
-						</div>
-					</div>
-					<div class="col mb-4">
-						<div class="card h-100">
-							<img src="imgs/12.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">예능</h5>
-								<p class="card-text">최종인 바보</p>
-							</div>
-						</div>
-					</div>
-					<div class="col mb-4">
-						<div class="card h-100">
-							<img src="imgs/너의이름은.jpg"" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">애니메이션</h5>
-								<p class="card-text">최종인 바보</p>
-							</div>
-						</div>
-					</div>
-				</div>
-		</div>
-		<!-- 장소 -->
-		<section id="one">
-			<div class="container wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-				<h2 class="text-center">다양한 장소</h2>
-				<div class="card-group">
-					<!-- card -->
-					<div class="card">
-						<img class="card-img-top img-fluid" src="./main_imgs/겨울연가.jpg"
-							alt="Card image cap">
-						<div class="card-block">
-							<h4 class="card-title">촬영지</h4>
-							<p class="card-text">최종인 바보</p>
-						</div>
-					</div>
-					<!-- card -->
-					<div class="card">
-						<img class="card-img-top img-fluid" src="imgs/고로상.jpg"
-							alt="Card image cap">
-						<div class="card-block">
-							<h4 class="card-title">음식점</h4>
-							<p class="card-text">최종인 바보</p>
-						</div>
-					</div>
-					<!-- card -->
-					<div class="card">
-						<img class="card-img-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample14.jpg"
-							alt="Card image cap">
-						<div class="card-block">
-							<h4 class="card-title">놀거리</h4>
-							<p class="card-text">최종인 바보</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+			<div>
 		</main>
+
+
+<!--  -->
+<section class="white-stripe arrow">
+ <div class="container">       
+ <div class="mt-5">
+			<h1 class="display-5 font-weight-normal">각양각색, 다양한 국가의 엔터테이먼트</h1>
+			<p class="lead font-weight-normal">한국,일본,미국,중국,전 세계의 작품을 찾아 볼 수 있습니다</p>
+</div>
+ </div>
+</section>
+<section class="timeline">
+            <div class="container">                
+                <div class="row">
+								<div class="country-block col-sm-6"
+								OnClick="location.href ='http://localhost/curture_page/media_page/korea_media.php'"
+								style="cursor:pointer;">
+                    <a>
+                            <i class="korea country"></i>
+                            Korea
+										</a>
+										</div>
+                    <div class="date-block col-sm-5">
+                        <div>Korea Drama</div>
+                    </div>                    
+                </div>
+                <div class="row">
+								<div class="date-block reverse col-sm-5 col-sm-pull-5">
+                        <div>Japan Animaition</div>
+                    </div>    
+								<div class="country-block reverse col-sm-6 col-sm-push-6"
+								OnClick="location.href ='http://localhost/curture_page/media_page/japan_media.php'"
+								style="cursor:pointer;">
+                    <a>
+                            <i class="japan country"></i>
+                            Japan
+                        
+										</a>
+										</div>                     
+                                                    
+                </div>
+                <div class="row">
+								<div class="country-block cb col-sm-6"
+								OnClick="location.href ='http://localhost/curture_page/media_page/usa_media.php'"
+								style="cursor:pointer;">
+                    <a>
+                            <i class="usa country"></i>
+                            America
+										</a>
+										</div>
+                    <div class="date-block col-sm-5">
+                        <div>Hollywood</div>
+                    </div>                    
+                </div>
+                <div class="row">
+								<div class="date-block reverse col-sm-5 col-sm-pull-5">
+                        <div>Martial Arts</div>
+                    </div>   
+								<div class="country-block reverse col-sm-6 col-sm-push-6"
+								OnClick="location.href ='http://localhost/curture_page/media_page/china_media.php'"
+								style="cursor:pointer;">
+                    <a>
+                            <i class="china country"></i>
+														China
+														</a> 
+                        </div>                             
+                </div>
+                <div class="row">
+								<div class="country-block col-sm-6"
+								OnClick="location.href ='http://localhost/curture_page/media_page/world_media.php'"
+								style="cursor:pointer;">
+                    <a>
+                            <i class="world country"></i>
+                            World
+										</a>
+										</div>
+                    <div class="date-block col-sm-5">
+                        <div>ETC..</div>
+                    </div>                    
+                </div>              
+            </div>
+				</section>
+</div>
+</html>

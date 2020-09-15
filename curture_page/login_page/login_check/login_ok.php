@@ -1,6 +1,6 @@
 <?php
   include "../../common/db.php";
-  include "../data/password.php";
+  include "../login_lib/password.php";
   
   $sql = mq("select * from members where id='".$_POST['id']."'");
   $member = $sql -> fetch_array();

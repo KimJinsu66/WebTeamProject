@@ -1,8 +1,6 @@
 /* japan_review_read.php */
 .button_container {
   display: flex;
-  width: 1200px;
-  margin: 0 auto;
 }
 .button_container > div {
   text-align: center;
