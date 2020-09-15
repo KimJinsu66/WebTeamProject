@@ -62,8 +62,13 @@
                           </div>
                           <div class="card-body text-center">
                             <a href="#"><h4 class="title"><?=$result['item_name']?></h4></a>
-                              <h4 class="title"><?=$result['item_price']?></h4>
+                              <h4 class="title"><small><?=$result['item_price']?>point</small></h4>                              
                               </a>
+                              <form action="pointshop_check/itembuy_ok.php" method="post">
+                              <input type="hidden" name="item_no" value="<?=$result['item_no']?>">
+                              <input type="hidden" name="item_price" value="<?=$result['item_price']?>">
+                              <input type="submit" value="구매">
+                              </form>                              
                           </div>
                       </div>
                   </div>

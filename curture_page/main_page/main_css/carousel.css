@@ -1,0 +1,10 @@
+.marketing .flag {
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .flag p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}

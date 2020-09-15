@@ -1,3 +1,6 @@
+<!Doctype html>
+<html>
+
 <?php
   include "../common/db.php";
   // include "review/lib/get_array_review.php";
@@ -10,12 +13,9 @@
 
   $get = new get;
 ?>
-<!DOCTYPE html>
-<html >
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>일본페이지</title>
+  <title>리뷰페이지</title>
   <!-- CSS 스타일 -->
   <link rel="stylesheet" href="review_css/curture_main.css">
   <link rel="stylesheet" href="review_css/mainTextAndreviewLayout.css">
@@ -23,10 +23,10 @@
   <?php include "../header/header.php"; ?>
   <style>
 
-    #paging{
+    /* #paging{
       text-align:center;
       margin-top:60px;
-    }
+    } */
 
     .review_title {
       display: inline-block;
@@ -44,7 +44,7 @@
 
 <div class="main-container">
   <div class="dropdown">
-    <button class="dropbtn">カテゴリー</button>
+    <button class="dropbtn">카테고리선택</button>
     <div class="dropdown-content">
       <?php if(isset($_GET['genre'])){ ?>
       <a href="review_page.php?genre=<?=$_GET['genre']?>&kategorie=음식&page=1">음식</a>
@@ -250,4 +250,5 @@
     </div>
     </div>
     <?php include "../footer/footer.php"?>
+  </body>
 </html>
