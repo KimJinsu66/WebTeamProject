@@ -21,7 +21,7 @@
   //암호화된 password와  암호화 되지 않은 password를 비교해주는 함수
   if(password_verify($password, $hash_pw)){
     //회원탈퇴 완료 알림을 띄어주고 확인을 누르면 홈화면으로 이동시킨다.
-    echo "<script>location.href='../../mypage_page/mypage.php?page=5';</script>";
+    echo "<script>location.href='../../mypage_page/mypage.php?page=6';</script>";
   }
 
 ?>

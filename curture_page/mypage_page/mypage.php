@@ -29,18 +29,18 @@
   <div class="list-group">
   <button type="button" class="list-group-item list-group-item-action active" 
   onclick="location.href='./mypage.php' ">
-    마이페이지
+  マイページ
   </button>
   <button type="button" class="list-group-item list-group-item-action" 
   onclick="location.href='./mypage.php?page=1' ">保存したレビュー</button>
   <button type="button" class="list-group-item list-group-item-action" 
   onclick="location.href='./mypage.php?page=2' ">自分が書いたレビュー</button>
   <button type="button" class="list-group-item list-group-item-action" 
-  onclick="location.href='./mypage.php?page=3' ">メンバー脱退</button>
+  onclick="location.href='./mypage.php?page=3' ">メンバー脱退</button>  
   <button type="button" class="list-group-item list-group-item-action" 
-  onclick="location.href='./mypage.php?page=4' ">회원정보 수정</button>
+  onclick="location.href='./mypage.php?page=4' ">会員情報修正</button>
   <button type="button" class="list-group-item list-group-item-action" 
-  onclick="location.href='./mypage.php?page=5' ">myitem</button>
+  onclick="location.href='./mypage.php?page=5' ">マイアイテム</button>
 </div>
 <div>
   <?php
@@ -67,6 +67,9 @@
   }
   else if($_GET['page']==5){ 
     require_once('view/view_user_buied_item.php');
+  }
+  else if($_GET['page']==6){ 
+    require_once('view/view_user_info_change1.php');
   }
   ?>
 </div>

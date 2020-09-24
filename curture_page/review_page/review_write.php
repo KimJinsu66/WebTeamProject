@@ -33,24 +33,24 @@
     <div class="option_box">
       <div class="select_box">
         <select name="select_country">
-          <option value="" selected="">나라</option>
-          <option value="한국"">한국</option>
-          <option value="일본">일본</option>
-          <option value="미국">미국</optioon>
-          <option value="기타">기타</optioon>
+          <option value="" selected="">国</option>
+          <option value="日本">日本</option>
+          <option value="韓国">韓国</option>
+          <option value="アメリカ">アメリカ</optioon>
+          <option value="中国">中国</optioon>
         </select>
         <select name="select_genre">
-          <option value="" selected="">장르</option>
-          <option value="영화">영화</option>
-          <option value="드라마">드라마</option>
-          <option value="애니메이션">애니메이션</optioon>
-          <option value="예능">예능</optioon>
+          <option value="" selected="">ジャンル</option>
+          <option value="映画">映画</option>
+          <option value="ドラマ">ドラマ</option>
+          <option value="アニメイシヨン">アニメイシヨン</optioon>
+          <option value="芸能">芸能</optioon>
         </select>
         <select name="select_kategorie">
-          <option value="" selected="">카테고리</option>
-          <option value="음식">음식</option>
-          <option value="장소">장소</option>
-          <option value="놀거리">놀거리</optioon>
+          <option value="" selected="">カテゴリー</option>
+          <option value="食べ物">食べ物</option>
+          <option value="場所">場所</option>
+          <option value="遊び物">遊び物</optioon>
         </select>
         
         <input list="browsers" name="genre_title" id="browser" placeholder="선택or검색">

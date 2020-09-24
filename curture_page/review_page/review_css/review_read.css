@@ -1,10 +1,13 @@
 /* japan_review_read.php */
 .button_container {
+  margin: 0 auto;
   display: flex;
+  width: 800px;
 }
 .button_container > div {
   text-align: center;
-  width: 60px;
+  width: 110px;
+  height: 30px;
   margin: 10px;
   border: 1px solid black;
   border-radius: 1px;

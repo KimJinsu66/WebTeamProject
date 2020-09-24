@@ -21,7 +21,6 @@
   margin-right: 40px;
 }
 .user_info,
-.bookmark_list,
 .myReview_list {
   margin-top: 40px;
 }
@@ -32,4 +31,9 @@
 
 .modify_userinfo {
   background: red;
+}
+
+.bookmark_list {
+  width: 700px;
+  margin-top: 40px;
 }
