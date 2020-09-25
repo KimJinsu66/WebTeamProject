@@ -43,31 +43,31 @@
     if($result['review_no'] > $_GET['review_no'] && $_GET['review_no'] > 1){
   ?>
     <div class="">
-      <a href="./review_read.php?review_no=<?=$_GET['review_no']+1?>">▲ 다음글</a>
+      <a href="./review_read.php?review_no=<?=$_GET['review_no']+1?>">▲ 次の文</a>
     </div>
     <div class="">
-        <a href="./review_read.php?review_no=<?=$_GET['review_no']-1?>">▼ 이전글</a>
+        <a href="./review_read.php?review_no=<?=$_GET['review_no']-1?>">▼ 以前の文</a>
       </div>
     <?php } 
 
     // 햔재보는 글이 최신글이라면 -> 다음글 x 이전글 o 
     if($result['review_no'] <= $_GET['review_no']){ ?>
       <div class="">
-        <a href="./review_read.php?review_no=<?=$_GET['review_no']-1?>">▼  이전글</a>
+        <a href="./review_read.php?review_no=<?=$_GET['review_no']-1?>">▼  以前の文</a>
       </div>
     <?php } 
 
     // 햔재보는 글이 최초(처음)글 이라면 -> 다음글 o 이전글 x
     if($_GET['review_no'] == 1){ ?>
       <div class="">
-        <a href="./review_read.php?review_no=<?=$_GET['review_no']+1?>">▲ 다음글</a>
+        <a href="./review_read.php?review_no=<?=$_GET['review_no']+1?>">▲ 次の文</a>
       </div>
     <?php } ?>
     <div class="">
-      <a href="./review_page.php?page=1">목록</a>
+      <a href="./review_page.php?page=1">リスト</a>
     </div>
     <div class="#">
-      <a href="./review_check/bookmark_ok.php?review_no=<?=$_GET['review_no']?>">즐겨찾기</a>
+      <a href="./review_check/bookmark_ok.php?review_no=<?=$_GET['review_no']?>">ブックマーク</a>
     </div>
   </div>
   <?php

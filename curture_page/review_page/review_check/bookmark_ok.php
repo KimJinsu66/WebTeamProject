@@ -27,7 +27,7 @@ if(!$result == null){
     //불러온 데이터 값에 뒤에  "," 와 현재 페이지의 review_no를 붙혀서 다시 저장한다.
     $reviewNum .= ",".$review_no;
     $sql4 = mq("update members_bookmark set reviewNum = '".$reviewNum."' where membersNum = '".$mem_no."'");
-    echo "<script>alert('즐찾되었습니다~'); history.back();</script>";
+    echo "<script>alert('お気に入りになりました~'); history.back();</script>";
   } else {
     // 현재 회원이 즐찾한 모든 번호를 string 형태로 가져온다. (db에 이미  스트링 형태로 들어가있음)
     $reviewNum_total = $result2['reviewNum'];
@@ -35,19 +35,19 @@ if(!$result == null){
     $reviewNum_array = explode(',', $reviewNum_total);
     // array_search(); 는  array안에 해당하는 valude 값을 입력해주면 value값의 index값을 찾아준다.
     $reviewNum_key = array_search($review_no, $reviewNum_array);
-    $reviewNum_empty = array_search("", $reviewNum_array);
+    // $reviewNum_empty = array_search("", $reviewNum_array);
     //unset(); 는  해당 배열의 index값을 넣어주면  그 index에 해당하는 값은 삭제시켜준다.
     unset($reviewNum_array[$reviewNum_key]);
-    unset($reviewNum_array[$reviewNum_empty]);
+    // unset($reviewNum_array[$reviewNum_empty]);
     var_dump($reviewNum_array);
     //  implode(); 는 특정 문자를 이용해서 배열형태인 값을 일반 string으로 만들어준다.
     $reviewNum_newTotal = implode(',',$reviewNum_array);
     $sql3 = mq("update members_bookmark set reviewNum = '".$reviewNum_newTotal."' where membersNum = '".$mem_no."'");
-    echo "<script>alert('즐찾이 취소되었습니다~'); history.back();</script>";
+    echo "<script>alert('お気に入りがキャンセルされました。'); history.back();</script>";
   }
 } else {
   $sql2 = mq("insert into members_bookmark(membersNum, reviewNum)values('".$mem_no."', '".$review_no."' )");
-  echo "<script>alert('즐찾되었습니다~'); history.back();</script>";
+  echo "<script>alert('お気に入りになりました~'); history.back();</script>";
 }
 
 ?>

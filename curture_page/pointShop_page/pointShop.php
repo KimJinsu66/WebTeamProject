@@ -44,7 +44,7 @@
             placeholder="作品を検索してください">
           </div>
           <div class="search_button_box">
-              <a type="button" href="./addItem.php" target="_top" class="btn btn-primary">글쓰기</a>
+              <!-- <a type="button" href="./addItem.php" target="_top" class="btn btn-primary">글쓰기</a> -->
           </div>
           <div class="projects">
               <div class="row">
@@ -58,7 +58,7 @@
                       <div class="card">
                           <div class="card-head">
                           <a href="#"><img src="./pointshop_imgs/<?=$result['item_img']?>"
-                              class="img-fluid card-img"></a>
+                              width="50%" class="img-fluid card-img"></a>
                           </div>
                           <div class="card-body text-center">
                             <a href="#"><h4 class="title"><?=$result['item_name']?></h4></a>
